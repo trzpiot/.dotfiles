@@ -1,0 +1,14 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.4,
+    "editor.fontLigatures": true,
+    "rust-analyzer.check.command": "clippy",
+    "git.enabled": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.openPositioning": "first",
+    "workbench.editor.showTabs": false,
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true
+}
