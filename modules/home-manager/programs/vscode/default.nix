@@ -19,6 +19,7 @@
         mkhl.direnv
         tamasfe.even-better-toml
         pkief.material-icon-theme
+        yzhang.markdown-all-in-one
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
         name = "volar";
         publisher = "Vue";
