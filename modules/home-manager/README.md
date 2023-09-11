@@ -5,7 +5,7 @@
 All packages can be found on [NixOS Search - Packages](https://search.nixos.org/packages) for more information.
 Note that I am using the unstable channel by default.
 
-Applications with additional configurations end up in a directory specifically for the application in [programs](programs). All others are simply defined in the [default.nix](default.nix).
+Applications with additional configurations end up in a directory ([programs](programs)) specifically for the application. All others are simply defined in the [default.nix](default.nix).
 
 ## Theme
 
