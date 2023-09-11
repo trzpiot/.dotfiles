@@ -12,6 +12,7 @@
     ./fish
     ./git
     ./gnome
+    ./jq
     ./lazygit
     ./neovim
     ./starship
