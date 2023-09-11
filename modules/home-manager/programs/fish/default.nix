@@ -10,6 +10,7 @@
     interactiveShellInit = "neofetch";
     shellAliases = {
       cat = "bat";
+      cd = "z";
       find = "fd";
       lg = "lazygit";
     };
