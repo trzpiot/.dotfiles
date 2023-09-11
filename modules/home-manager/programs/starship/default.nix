@@ -4,6 +4,7 @@
     enableFishIntegration = true;
     enableTransience = true;
     settings = {
+      # Source: https://draculatheme.com/starship
       aws.style = "bold #ffb86c";
       cmd_duration.style = "bold #f1fa8c";
       directory.style = "bold #50fa7b";
