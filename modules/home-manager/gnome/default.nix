@@ -19,11 +19,8 @@
         "rounded-window-corners@yilozt"
         "forge@jmmaranan.com"
       ];
-      favorite-apps = [
-        "firefox.desktop"
-        "org.gnome.Nautilus.desktop"
-        "org.gnome.Console.desktop"
-      ];
+      favorite-apps =
+        [ "firefox.desktop" "org.gnome.Nautilus.desktop" "Alacritty.desktop" ];
     };
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "blank";
