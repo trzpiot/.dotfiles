@@ -11,7 +11,6 @@
     ./firefox
     ./fish
     ./git
-    ./gnome
     ./jq
     ./lazygit
     ./neovim

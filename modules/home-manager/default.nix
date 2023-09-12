@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./programs ];
+  imports = [ ./gnome ./programs ];
 
   home = {
     # Same as `system.stateVersion` (see `configuration.nix`).
