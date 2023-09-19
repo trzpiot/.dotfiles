@@ -31,7 +31,6 @@
     gnome.dconf-editor
     gnome.gnome-boxes
     gnomeExtensions.appindicator
-    gnomeExtensions.forge
     gnomeExtensions.rounded-window-corners
     godot_4
     inter
