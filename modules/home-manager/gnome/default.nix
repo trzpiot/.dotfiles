@@ -17,7 +17,6 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "rounded-window-corners@yilozt"
-        "forge@jmmaranan.com"
       ];
       favorite-apps =
         [ "firefox.desktop" "org.gnome.Nautilus.desktop" "Alacritty.desktop" ];
