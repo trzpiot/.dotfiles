@@ -43,19 +43,5 @@
       secondary-color = "#000000";
       show-desktop-icons = false;
     };
-    "org/gnome/shell/extensions/forge/keybindings" = {
-      window-focus-down = [ "<Super>Down" ];
-      window-focus-left = [ "<Super>Left" ];
-      window-focus-right = [ "<Super>Right" ];
-      window-focus-up = [ "<Super>Up" ];
-      window-move-down = [ "<Shift><Super>Down" ];
-      window-move-left = [ "<Shift><Super>Left" ];
-      window-move-right = [ "<Shift><Super>Right" ];
-      window-move-up = [ "<Shift><Super>Up" ];
-      window-swap-down = [ "<Control><Super>Down" ];
-      window-swap-left = [ "<Control><Super>Left" ];
-      window-swap-right = [ "<Control><Super>Right" ];
-      window-swap-up = [ "<Control><Super>Up" ];
-    };
   };
 }
