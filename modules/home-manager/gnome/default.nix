@@ -18,6 +18,7 @@
         "appindicatorsupport@rgcjonas.gmail.com"
         "blur-my-shell@aunetx"
         "rounded-window-corners@yilozt"
+        "tiling-assistant@leleat-on-github"
       ];
       favorite-apps =
         [ "firefox.desktop" "org.gnome.Nautilus.desktop" "Alacritty.desktop" ];
