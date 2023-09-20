@@ -16,34 +16,13 @@
     };
     functions = {
       nixos-custom = {
-        body = ''
-          pushd ~/.dotfiles
-          switch $argv[1]
-            case 'check'
-                nix flake check
-            case 'config'
-                code .
-            case 'switch'
-                sudo nixos-rebuild --flake .# switch
-            case 'update'
-                nix flake update
-                sudo nixos-rebuild --flake .# switch
-            case '*'
-                set_color red
-                echo "error: Invalid subcommand"
-                set_color normal
-          end
-          popd
-        '';
+        body = builtins.readFile functions/nixos-custom.fish;
         description = "Custom commands for NixOS";
       };
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
       devenv = {
-        body = ''
-          nix flake init --template github:cachix/devenv
-          echo .devenv >> .gitignore
-          echo .direnv >> .gitignore
-        '';
+        body = builtins.readFile functions/devenv-init.fish;
+        description = "Initialize a develop environment (with devenv)";
       };
     };
   };
