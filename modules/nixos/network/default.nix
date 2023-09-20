@@ -1,4 +1,11 @@
 {
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    dhcpcd.enable = false;
+
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
+  };
 }
