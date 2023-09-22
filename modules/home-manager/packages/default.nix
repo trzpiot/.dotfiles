@@ -31,7 +31,6 @@
     gnome.dconf-editor
     gnome.gnome-boxes
     gnomeExtensions.appindicator
-    gnomeExtensions.blur-my-shell
     gnomeExtensions.rounded-window-corners
     gnomeExtensions.tiling-assistant
     godot_4

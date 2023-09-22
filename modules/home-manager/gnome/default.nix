@@ -16,7 +16,6 @@
     "org/gnome/shell" = {
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "blur-my-shell@aunetx"
         "rounded-window-corners@yilozt"
         "tiling-assistant@leleat-on-github"
       ];
