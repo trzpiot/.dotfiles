@@ -32,7 +32,6 @@
     gnome.gnome-boxes
     gnomeExtensions.appindicator
     gnomeExtensions.rounded-window-corners
-    gnomeExtensions.tiling-assistant
     godot_4
     inter
     jetbrains.idea-community

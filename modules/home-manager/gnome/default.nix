@@ -17,7 +17,6 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "rounded-window-corners@yilozt"
-        "tiling-assistant@leleat-on-github"
       ];
       favorite-apps =
         [ "firefox.desktop" "org.gnome.Nautilus.desktop" "Alacritty.desktop" ];
