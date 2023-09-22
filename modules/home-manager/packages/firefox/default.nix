@@ -5,6 +5,7 @@
     enable = true;
 
     profiles.default.extensions = with config.nur.repos.rycee.firefox-addons; [
+      ublacklist
       ublock-origin
       # TODO: Write script for updating Enpass
       (buildFirefoxXpiAddon {
