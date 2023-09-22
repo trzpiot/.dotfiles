@@ -24,9 +24,9 @@
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
         name = "volar";
         publisher = "Vue";
-        version = "1.8.10";
+        version = "1.8.13";
         sha256 =
-          "35efd0a6a116b5bb97df7eba16294b0848241dc996ca428ba291158c325e03a4";
+          "a83f81aa385ac980a3717da0184f322e3c6c02a729436df57b4080188f8a12c1";
       }];
   };
 }
