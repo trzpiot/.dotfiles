@@ -10,5 +10,16 @@
     "workbench.editor.openPositioning": "first",
     "workbench.editor.showTabs": false,
     "files.autoSave": "onFocusChange",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nil",
+    "nix.serverSettings": {
+        "nil": {
+            "formatting": {
+                "command": [
+                    "nixpkgs-fmt"
+                ]
+            }
+        }
+    }
 }

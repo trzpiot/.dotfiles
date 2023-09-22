@@ -42,7 +42,8 @@
     # I just need the JetBrainsMono font from the Nerd Fonts package.
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-    nixfmt
+    nil
+    nixpkgs-fmt
     ollama
     spotify
   ];

@@ -12,10 +12,9 @@
 
     extensions = with pkgs.vscode-extensions;
       [
-        bbenoist.nix
-        brettm12345.nixfmt-vscode
+        jnoortheen.nix-ide
         dracula-theme.theme-dracula
-        rust-lang.rust-analyzer
+          rust-lang.rust-analyzer
         mkhl.direnv
         tamasfe.even-better-toml
         pkief.material-icon-theme
