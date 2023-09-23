@@ -16,7 +16,6 @@
     "org/gnome/shell" = {
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "rounded-window-corners@yilozt"
         "paperwm@hedning:matrix.org"
       ];
       favorite-apps =

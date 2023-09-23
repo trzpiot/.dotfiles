@@ -31,7 +31,6 @@
     gnome.dconf-editor
     gnome.gnome-boxes
     gnomeExtensions.appindicator
-    gnomeExtensions.rounded-window-corners
     gnomeExtensions.paperwm
     godot_4
     inter
