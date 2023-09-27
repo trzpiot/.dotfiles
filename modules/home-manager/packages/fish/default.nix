@@ -3,6 +3,7 @@
     enable = true;
     shellInit = ''
       complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'check' -d 'Check NixOS configuration'
+      complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'clean' -d 'Clean up NixOS'
       complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'config' -d 'Edit NixOS configuration'
       complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'switch' -d 'Switch to a new NixOS configuration'
       complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'update' -d 'Update NixOS and switch to a new configuration'

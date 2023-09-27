@@ -2,6 +2,8 @@ pushd ~/.dotfiles
 switch $argv[1]
     case 'check'
         nix flake check
+    case 'clean'
+        sudo nix-collect-garbage --delete-older-than 7d
     case 'config'
         code .
     case 'switch'
