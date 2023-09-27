@@ -4,6 +4,7 @@
   imports = [
     ./alacritty
     ./bat
+    ./chromium
     ./dircolors
     ./direnv
     ./enpass
