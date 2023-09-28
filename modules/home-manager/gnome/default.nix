@@ -16,7 +16,7 @@
     "org/gnome/shell" = {
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "paperwm@hedning:matrix.org"
+        "paperwm@paperwm.github.com"
       ];
       favorite-apps =
         [ "firefox.desktop" "org.gnome.Nautilus.desktop" "Alacritty.desktop" ];
