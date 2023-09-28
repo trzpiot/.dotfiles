@@ -47,5 +47,6 @@
     nixpkgs-fmt
     ollama
     spotify
+    texstudio
   ];
 }
