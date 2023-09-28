@@ -16,6 +16,7 @@
     ./lazygit
     ./neovim
     ./starship
+    ./texlive
     ./vscode
     ./zoxide
   ];
