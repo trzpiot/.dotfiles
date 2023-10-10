@@ -18,8 +18,10 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Primary monitor is enabled - all other monitors are disabled for the login screen.
-  systemd.tmpfiles.rules = let
-    monitorsXmlContent = builtins.readFile ./monitors.xml;
-    monitorsConfig = pkgs.writeText "gdm_monitors.xml" monitorsXmlContent;
-  in [ "L+ /run/gdm/.config/monitors.xml - - - - ${monitorsConfig}" ];
+  systemd.tmpfiles.rules =
+    let
+      monitorsXmlContent = builtins.readFile ./monitors.xml;
+      monitorsConfig = pkgs.writeText "gdm_monitors.xml" monitorsXmlContent;
+    in
+    [ "L+ /run/gdm/.config/monitors.xml - - - - ${monitorsConfig}" ];
 }
