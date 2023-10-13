@@ -6,7 +6,6 @@ My personal dotfiles. 🔧
 
 These are the dotfiles for my PC with NixOS. 
 I try to keep them always up to date (e.g. with the modern tools Nix Flakes and Home Manager).
-
 If you have any questions about Nix or NixOS, feel free to create an issue or contact the amazing [community](https://nixos.org/community/).
 
 ## Installation
@@ -68,7 +67,7 @@ Currently, the dotfiles are divided into two modules.
 This is (for now) only for the sake of clarity.
 
 > [!NOTE]  
-> Currently, the dotfiles are tailored to a single system (NixOS).
+> The dotfiles are tailored to a single system (NixOS).
 > This may change in the future.
 
 ### nixos
