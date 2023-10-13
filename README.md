@@ -8,7 +8,7 @@ These are the dotfiles for my PC with NixOS.
 I try to keep them always up to date (e.g. with the modern tools Nix Flakes and Home Manager).
 If you have any questions about Nix or NixOS, feel free to create an issue or contact the amazing [community](https://nixos.org/community/).
 
-## Installation
+## Setup
 
 > [!WARNING]  
 > The dotfiles are very tailored to my PC & needs.
@@ -16,7 +16,7 @@ If you have any questions about Nix or NixOS, feel free to create an issue or co
 > If you still have questions, feel free to create an issue.
 
 <details>
-  <summary>Installation guide</summary>
+  <summary>Setup guide</summary>
   
   Install NixOS according to the [official documentation](https://nixos.org/manual/nixos/stable/#ch-installation).
 
