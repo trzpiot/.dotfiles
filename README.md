@@ -43,14 +43,14 @@ If you have any questions about Nix or NixOS, feel free to create an issue or co
   cd ~/.dotfiles
   ```
 
+  Customize the dotfiles according to your needs.
+
   Update the Nix Flake.
 
   ```sh
   nix flake update --experimental-features 'nix-command flakes'
   ```
 
-  Customize the dotfiles according to your needs.
-  
   Rebuild the system using the dotfiles.
 
   ```sh
