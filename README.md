@@ -86,6 +86,8 @@ In this module (as the name suggests) [Home Manager](https://github.com/nix-comm
 All packages can be found on [NixOS Search - Packages](https://search.nixos.org/packages) for more information.
 Note that I am using the unstable channel by default.
 
+**Desktop environment:** [Gnome](https://www.gnome.org/)
+
 <details>
   <summary>List of installed packages</summary>
   
