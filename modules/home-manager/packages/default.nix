@@ -45,7 +45,6 @@
 
     nil
     nixpkgs-fmt
-    ollama
     spotify
     texstudio
   ];
