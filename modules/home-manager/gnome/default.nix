@@ -5,13 +5,20 @@
   };
 
   dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      xkb-options = [
+        "compose:rwin"
+      ];
+    };
     "org/gnome/desktop/interface" = {
       font-name = "Inter 11";
       document-font-name = "Atkinson Hyperlegible 11";
       monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
     };
     "org/gnome/mutter" = {
-      experimental-features = [ "scale-monitor-framebuffer" ];
+      experimental-features = [
+        "scale-monitor-framebuffer"
+      ];
     };
     "org/gnome/shell" = {
       enabled-extensions = [
