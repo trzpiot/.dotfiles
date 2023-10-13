@@ -49,7 +49,8 @@ If you have any questions about Nix or NixOS, feel free to create an issue or co
   nix flake update --experimental-features 'nix-command flakes'
   ```
 
-  Edit the dotfiles 
+  Customize the dotfiles according to your needs.
+  
   Rebuild the system using the dotfiles.
 
   ```sh
