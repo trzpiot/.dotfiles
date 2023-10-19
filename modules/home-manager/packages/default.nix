@@ -1,51 +1,40 @@
 { pkgs, ... }:
 
+let
+  customPkgs = {
+    jetBrainsMonoNerdfont = pkgs.nerdfonts.override {
+      fonts = [ "JetBrainsMono" ];
+    };
+  };
+in
 {
-  imports = [
-    ./alacritty
-    ./bat
-    ./chromium
-    ./dircolors
-    ./direnv
-    ./enpass
-    ./eza
-    ./firefox
-    ./fish
-    ./git
-    ./jq
-    ./lazygit
-    ./neovim
-    ./starship
-    ./texlive
-    ./vscode
-    ./zoxide
-  ];
-  programs = { home-manager.enable = true; };
-
-  home.packages = with pkgs; [
-    aseprite
-    atkinson-hyperlegible
-    delta
-    discord
-    enpass
-    fd
-    gimp
-    gnome.dconf-editor
-    gnome.gnome-boxes
-    gnomeExtensions.appindicator
-    gnomeExtensions.paperwm
-    godot_4
-    inter
-    jetbrains.idea-community
-    logseq
-    neofetch
-
-    # I just need the JetBrainsMono font from the Nerd Fonts package.
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-
-    nil
-    nixpkgs-fmt
-    spotify
-    texstudio
-  ];
+  home.packages = builtins.attrValues
+    {
+      inherit (pkgs)
+        aseprite
+        atkinson-hyperlegible
+        delta
+        discord
+        enpass
+        fd
+        gimp
+        godot_4
+        inter
+        logseq
+        neofetch
+        nil
+        nixpkgs-fmt
+        spotify
+        texstudio;
+      inherit (pkgs.gnome)
+        dconf-editor
+        gnome-boxes;
+      inherit (pkgs.gnomeExtensions)
+        appindicator
+        paperwm;
+      inherit (pkgs.jetbrains)
+        idea-community;
+      inherit (customPkgs)
+        jetBrainsMonoNerdfont;
+    };
 }

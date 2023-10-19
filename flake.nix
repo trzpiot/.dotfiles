@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }: {
+  outputs = { nixpkgs, home-manager, nur, ... }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         modules = [

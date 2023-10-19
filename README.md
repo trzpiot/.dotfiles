@@ -83,54 +83,11 @@ In this module (as the name suggests) [Home Manager](https://github.com/nix-comm
 
 ## Packages
 
-All packages can be found on [NixOS Search - Packages](https://search.nixos.org/packages) for more information.
+Programs that can be configured with Home Manager are located in their own directories under [programs](./modules/home-manager/programs/).
+All other packages are defined in [packages](./modules/home-manager/packages/default.nix).
+
+More details to each package can be found on [NixOS Search - Packages](https://search.nixos.org/packages).
 Note that I am using the unstable channel by default.
-
-**Desktop environment:** [Gnome](https://www.gnome.org/)
-
-<details>
-  <summary>List of installed packages</summary>
-  
-  | Package                      | URL                                                                                  |
-  | ---------------------------- | ------------------------------------------------------------------------------------ |
-  | alacritty                    | https://search.nixos.org/packages?channel=unstable&show=alacritty                    |
-  | aseprite                     | https://search.nixos.org/packages?channel=unstable&show=aseprite                     |
-  | atkinson-hyperlegible        | https://search.nixos.org/packages?channel=unstable&show=atkinson-hyperlegible        |
-  | bat                          | https://search.nixos.org/packages?channel=unstable&show=bat                          |
-  | chromium                     | https://search.nixos.org/packages?channel=unstable&show=chromium                     |
-  | delta                        | https://search.nixos.org/packages?channel=unstable&show=delta                        |
-  | dircolors                    | https://search.nixos.org/packages?channel=unstable&show=dircolors                    |
-  | direnv                       | https://search.nixos.org/packages?channel=unstable&show=direnv                       |
-  | discord                      | https://search.nixos.org/packages?channel=unstable&show=discord                      |
-  | enpass                       | https://search.nixos.org/packages?channel=unstable&show=enpass                       |
-  | eza                          | https://search.nixos.org/packages?channel=unstable&show=eza                          |
-  | fd                           | https://search.nixos.org/packages?channel=unstable&show=fd                           |
-  | firefox                      | https://search.nixos.org/packages?channel=unstable&show=firefox                      |
-  | fish                         | https://search.nixos.org/packages?channel=unstable&show=fish                         |
-  | gimp                         | https://search.nixos.org/packages?channel=unstable&show=gimp                         |
-  | git                          | https://search.nixos.org/packages?channel=unstable&show=git                          |
-  | gnome.dconf-editor           | https://search.nixos.org/packages?channel=unstable&show=gnome.dconf-editor           |
-  | gnome.gnome-boxes            | https://search.nixos.org/packages?channel=unstable&show=gnome.gnome-boxes            |
-  | gnomeExtensions.appindicator | https://search.nixos.org/packages?channel=unstable&show=gnomeExtensions.appindicator |
-  | gnomeExtensions.paperwm      | https://search.nixos.org/packages?channel=unstable&show=gnomeExtensions.paperwm      |
-  | godot_4                      | https://search.nixos.org/packages?channel=unstable&show=godot_4                      |
-  | inter                        | https://search.nixos.org/packages?channel=unstable&show=inter                        |
-  | jetbrains.idea-community     | https://search.nixos.org/packages?channel=unstable&show=jetbrains.idea-community     |
-  | jq                           | https://search.nixos.org/packages?channel=unstable&show=jq                           |
-  | lazygit                      | https://search.nixos.org/packages?channel=unstable&show=lazygit                      |
-  | logseq                       | https://search.nixos.org/packages?channel=unstable&show=logseq                       |
-  | neofetch                     | https://search.nixos.org/packages?channel=unstable&show=neofetch                     |
-  | neovim                       | https://search.nixos.org/packages?channel=unstable&show=neovim                       |
-  | nerdfonts                    | https://search.nixos.org/packages?channel=unstable&show=nerdfonts                    |
-  | nil                          | https://search.nixos.org/packages?channel=unstable&show=nil                          |
-  | nixpkgs-fmt                  | https://search.nixos.org/packages?channel=unstable&show=nixpkgs-fmt                  |
-  | spotify                      | https://search.nixos.org/packages?channel=unstable&show=spotify                      |
-  | starship                     | https://search.nixos.org/packages?channel=unstable&show=starship                     |
-  | texlive                      | https://search.nixos.org/packages?channel=unstable&show=texlive                      |
-  | texstudio                    | https://search.nixos.org/packages?channel=unstable&show=texstudio                    |
-  | vscode                       | https://search.nixos.org/packages?channel=unstable&show=vscode                       |
-  | zoxide                       | https://search.nixos.org/packages?channel=unstable&show=zoxide                       |
-</details>
 
 ## Theme
 

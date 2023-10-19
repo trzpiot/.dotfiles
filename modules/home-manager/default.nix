@@ -1,5 +1,5 @@
 {
-  imports = [ ./gnome ./packages ];
+  imports = [ ./gnome ./packages ./programs ];
 
   home = {
     # Same as `system.stateVersion` (see `man configuration.nix`).
