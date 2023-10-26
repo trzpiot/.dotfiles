@@ -13,6 +13,7 @@ in
       inherit (pkgs)
         aseprite
         atkinson-hyperlegible
+        bruno
         delta
         discord
         enpass
