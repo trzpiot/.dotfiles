@@ -8,6 +8,7 @@
       font-name = "Inter 11";
       document-font-name = "Atkinson Hyperlegible 11";
       monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
+      enable-hot-corners = false;
     };
 
     "org/gnome/mutter" = {
