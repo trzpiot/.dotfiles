@@ -16,6 +16,7 @@
       direnv.enable = true;
       discord.enable = true;
       enpass.enable = true;
+      eyedropper.enable = true;
       eza.enable = true;
       fd.enable = true;
       firefox.enable = true;
