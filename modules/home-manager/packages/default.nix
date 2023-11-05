@@ -26,6 +26,7 @@ in
         nil
         nixpkgs-fmt
         spotify
+        steam
         texstudio;
       inherit (pkgs.gnome)
         dconf-editor
