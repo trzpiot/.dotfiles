@@ -7,6 +7,7 @@
       enable = true;
       kernelModules = [ "amdgpu" ];
     };
+    gaming.enable = true;
     gnome.enable = true;
     home-manager.enable = true;
     locale.enable = true;
