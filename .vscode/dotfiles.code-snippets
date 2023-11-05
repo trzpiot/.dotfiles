@@ -1,0 +1,25 @@
+{
+    "Module default.nix": {
+        "prefix": ["mod"],
+        "body": [
+            "{ options, config, pkgs, lib, ... }:",
+            "",
+            "let",
+            "  inherit (lib) mkEnableOption mkIf;",
+            "  cfg = config.trzpiot.${1:PATH};",
+            "in",
+            "{",
+            "  options.trzpiot.${1:PATH} = {",
+            "    enable = mkEnableOption \"${2:NAME}\";",
+            "  };",
+            "",
+            "  config = mkIf cfg.enable {",
+            "    ${3:CONTENT}",
+            "  };",
+            "}"
+        ],
+        "description": "Template for a default.nix in a module.",
+        "isFileTemplate": true
+        
+    }
+}

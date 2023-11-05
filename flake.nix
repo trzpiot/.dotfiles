@@ -4,27 +4,45 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  outputs = { nixpkgs, home-manager, nur, ... }: {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./modules/nixos/default.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.sebastian.imports = [ nur.hmModules.nur ./modules/home-manager/default.nix ];
-            };
-          }
-        ];
-      };
+    snowfall-lib = {
+      url = "github:snowfallorg/lib";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs = inputs:
+    let
+      lib = inputs.snowfall-lib.mkLib {
+        inherit inputs;
+        src = ./.;
+
+        snowfall = {
+          meta = {
+            name = "trzpiot";
+            title = "trzpiot's dotfiles";
+          };
+
+          namespace = "trzpiot";
+        };
+      };
+    in
+    lib.mkFlake {
+      channels-config = {
+        allowUnfree = true;
+      };
+
+      overlays = [
+        inputs.nur.overlay
+      ];
+
+      systems.modules.nixos = [
+        inputs.home-manager.nixosModules.home-manager
+      ];
+    };
 }
