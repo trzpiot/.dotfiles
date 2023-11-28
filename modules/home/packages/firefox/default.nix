@@ -11,10 +11,10 @@ let
   customAddons = {
     enpass = buildFirefoxXpiAddon rec {
       pname = "enpass";
-      version = "6.8.8";
+      version = "6.9.4";
       addonId = "firefox-enpass@enpass.io";
-      url = "https://dl.enpass.io/stable/extensions/firefox/versions/v${version}-15/enpass-firefox-${version}.xpi";
-      sha256 = "e8722857fe8064acbc2dd78c310f8dfd942d587931de531fe3d69327e8c877fa";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4195847/enpass_password_manager-${version}.xpi";
+      sha256 = "53008cd7f27be61e9f88185e90c865ed896c1c83cb2cc314c99dbcdf73e54405";
       meta = { };
     };
     todoist = buildFirefoxXpiAddon rec {
