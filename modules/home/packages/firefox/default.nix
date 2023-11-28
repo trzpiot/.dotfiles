@@ -1,11 +1,12 @@
 { options, config, pkgs, lib, ... }:
 
 let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption mkIf optionals;
   inherit (pkgs.nur.repos.rycee) firefox-addons;
   inherit (pkgs.nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
 
   cfg = config.trzpiot.packages.firefox;
+  todoistCfg = config.trzpiot.packages.todoist;
 
   # TODO: Write script for updating custom addons
   customAddons = {
@@ -41,14 +42,15 @@ in
       profiles.default = {
         settings = lib.importJSON ./settings.json;
 
-        extensions = builtins.attrValues {
-          inherit (firefox-addons)
-            ublacklist
-            ublock-origin;
-          inherit (customAddons)
-            enpass
-            todoist;
-        };
+        extensions =
+          builtins.attrValues
+            {
+              inherit (firefox-addons)
+                ublacklist
+                ublock-origin;
+              inherit (customAddons)
+                enpass;
+            } ++ optionals todoistCfg.enable [ customAddons.todoist ];
       };
     };
   };
