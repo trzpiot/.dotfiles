@@ -41,6 +41,7 @@
       steam.enable = true;
       texlive.enable = true;
       texstudio.enable = true;
+      todoist.enable = true;
       vscode.enable = true;
       zoxide.enable = true;
     };

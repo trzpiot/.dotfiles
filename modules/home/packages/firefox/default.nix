@@ -17,6 +17,14 @@ let
       sha256 = "e8722857fe8064acbc2dd78c310f8dfd942d587931de531fe3d69327e8c877fa";
       meta = { };
     };
+    todoist = buildFirefoxXpiAddon rec {
+      pname = "todoist";
+      version = "11.1";
+      addonId = "support@todoist.com";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4114398/todoist-${version}.xpi";
+      sha256 = "46b4aa72e7f3099fc40d28078bed0910e80a635b532eb62074ed3ec778ae0e86";
+      meta = { };
+    };
   };
 in
 {
@@ -38,7 +46,8 @@ in
             ublacklist
             ublock-origin;
           inherit (customAddons)
-            enpass;
+            enpass
+            todoist;
         };
       };
     };
