@@ -6,6 +6,7 @@ let
   inherit (pkgs.nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
 
   cfg = config.trzpiot.packages.firefox;
+  enpassCfg = config.trzpiot.packages.todoist;
   todoistCfg = config.trzpiot.packages.todoist;
 
   # TODO: Write script for updating custom addons
@@ -48,9 +49,9 @@ in
               inherit (firefox-addons)
                 ublacklist
                 ublock-origin;
-              inherit (customAddons)
-                enpass;
-            } ++ optionals todoistCfg.enable [ customAddons.todoist ];
+            }
+          ++ optionals enpassCfg.enable [ customAddons.enpass ]
+          ++ optionals todoistCfg.enable [ customAddons.todoist ];
       };
     };
   };
