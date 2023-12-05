@@ -21,6 +21,10 @@
       fd.enable = true;
       firefox.enable = true;
       fish.enable = true;
+      fonts = {
+        blexMonoNerdFont.enable = true;
+        hackNerdFont.enable = true;
+      };
       gimp.enable = true;
       git.enable = true;
       gnome-boxes.enable = true;

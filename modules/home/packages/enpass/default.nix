@@ -8,6 +8,7 @@ in
 {
   options.trzpiot.packages.enpass = {
     enable = mkEnableOption "Enpass";
+
   };
 
   config = mkIf cfg.enable {

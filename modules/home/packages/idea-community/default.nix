@@ -3,12 +3,6 @@
 let
   inherit (lib) mkEnableOption mkIf;
   cfg = config.trzpiot.packages.idea-community;
-
-  customPkgs = {
-    jetBrainsMonoNerdfont = pkgs.nerdfonts.override {
-      fonts = [ "JetBrainsMono" ];
-    };
-  };
 in
 {
   options.trzpiot.packages.idea-community = {
@@ -16,9 +10,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = [
-      pkgs.jetbrains.idea-community
-      customPkgs.jetBrainsMonoNerdfont
-    ];
+    home.packages = [ pkgs.jetbrains.idea-community ];
   };
 }

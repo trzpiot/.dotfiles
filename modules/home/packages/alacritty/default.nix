@@ -29,21 +29,22 @@ in
         };
 
         font = {
-          size = 11;
+          size = 10;
+          offset.y = 2;
           normal = {
-            family = "JetBrainsMono Nerd Font Mono";
+            family = "Hack Nerd Font";
             style = "Regular";
           };
           bold = {
-            family = "JetBrainsMono Nerd Font Mono";
+            family = "Hack Nerd Font";
             style = "Bold";
           };
           italic = {
-            family = "JetBrainsMono Nerd Font Mono";
+            family = "Hack Nerd Font";
             style = "Italic";
           };
           "bold italic" = {
-            family = "JetBrainsMono Nerd Font Mono";
+            family = "Hack Nerd Font";
             style = "Bold Italic";
           };
         };
