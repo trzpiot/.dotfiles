@@ -6,7 +6,7 @@ let
   inherit (pkgs.nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
 
   cfg = config.trzpiot.packages.firefox;
-  enpassCfg = config.trzpiot.packages.todoist;
+  enpassCfg = config.trzpiot.packages.enpass;
   todoistCfg = config.trzpiot.packages.todoist;
 
   # TODO: Write script for updating custom addons
