@@ -35,6 +35,10 @@
     lib.mkFlake {
       channels-config = {
         allowUnfree = true;
+        permittedInsecurePackages = [
+          # TODO: Remove as soon as Logseq has updated the Electron version
+          "electron-25.9.0"
+        ];
       };
 
       overlays = [
