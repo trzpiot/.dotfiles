@@ -7,6 +7,7 @@
       enable = true;
       kernelModules = [ "amdgpu" ];
     };
+    docker.enable = true;
     gaming.enable = true;
     gnome.enable = true;
     home-manager.enable = true;
