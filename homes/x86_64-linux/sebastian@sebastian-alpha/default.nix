@@ -30,6 +30,7 @@
       gnome-boxes.enable = true;
       gnome-extensions.appindicator.enable = true;
       gnome-extensions.paperwm.enable = true;
+      gnome-multi-writer.enable = true;
       godot.enable = true;
       home-manager.enable = true;
       idea-community.enable = true;
