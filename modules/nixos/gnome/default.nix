@@ -28,9 +28,6 @@ in
       driSupport32Bit = true;
     };
 
-    # Enable Wayland support for Electron applications.
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
     # Primary monitor is enabled - all other monitors are disabled for the login screen.
     systemd.tmpfiles.rules =
       let
