@@ -6,7 +6,6 @@
     packages = {
       alacritty.enable = true;
       aseprite.enable = true;
-      atkinson-hyperlegible.enable = true;
       bat.enable = true;
       bruno.enable = true;
       chromium.enable = true;
@@ -22,8 +21,10 @@
       firefox.enable = true;
       fish.enable = true;
       fonts = {
+        atkinsonHyperlegible.enable = true;
         blexMonoNerdFont.enable = true;
         hackNerdFont.enable = true;
+        inter.enable = true;
       };
       gimp.enable = true;
       git.enable = true;
