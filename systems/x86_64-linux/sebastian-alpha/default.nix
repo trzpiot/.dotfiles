@@ -9,7 +9,6 @@
       kernelModules = [ "amdgpu" ];
     };
 
-    docker.enable = true;
     gaming.enable = true;
     gnome.enable = true;
     home-manager.enable = true;
@@ -29,6 +28,11 @@
           shell = "fish";
         }
       ];
+    };
+
+    virtualisation = {
+      docker.enable = true;
+      podman.enable = true;
     };
   };
 
