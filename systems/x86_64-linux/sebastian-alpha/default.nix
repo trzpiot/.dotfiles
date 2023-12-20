@@ -17,7 +17,15 @@
     security.enable = true;
     users = {
       enable = true;
-      default-shell = "fish";
+
+      users = [
+        {
+          username = "sebastian";
+          name = "Sebastian Gabriel Trzpiot";
+          email = "dev@trzpiot.de";
+          shell = "fish";
+        }
+      ];
     };
   };
 

@@ -2,19 +2,22 @@
 
 let
   inherit (lib) mkOption;
-  inherit (lib.types) enum package str;
+  inherit (lib.lists) findFirst;
+  inherit (lib.types) enum nullOr package str;
 in
 {
+  findOrNull = parameter: search: list:
+    findFirst (x: x.${parameter} == search) null list;
   mkEnumOption = values: default: description:
     mkOption {
       inherit default description;
-      type = enum values;
+      type = (nullOr (enum values));
     };
 
   mkStrOption = default: description:
     mkOption {
       inherit default description;
-      type = str;
+      type = (nullOr str);
     };
 
   mkPackageOption = default: description:

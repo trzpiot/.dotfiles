@@ -1,28 +1,47 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
-  inherit (lib) mkEnableOption mkIf;
-  inherit (lib.trzpiot) mkEnumOption;
+  inherit (builtins) any listToAttrs;
+  inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib.trzpiot) mkEnumOption mkStrOption;
+  inherit (lib.types) listOf submodule;
   cfg = config.trzpiot.users;
+
+  user = {
+    options = {
+      username = mkStrOption null "The name of the user account.";
+      name = mkStrOption null "The full name of the user.";
+      email = mkStrOption null "The e-mail address of the user.";
+      shell = mkEnumOption [ "bash" "fish" ] "bash" "The shell for the user.";
+    };
+  };
 in
 {
   options.trzpiot.users = {
     enable = mkEnableOption "Users";
-    default-shell = mkEnumOption [ "bash" "fish" ] "bash" "The default shell.";
+
+    users = mkOption {
+      type = listOf (submodule user);
+      default = [ ];
+    };
   };
 
   config = mkIf cfg.enable {
-    programs.fish.enable = mkIf (cfg.default-shell == "fish") true;
+    programs.fish.enable = mkIf (any (user: user.shell == "fish") cfg.users) true;
 
-    users.users.sebastian = {
-      isNormalUser = true;
-      description = "Sebastian Gabriel Trzpiot";
-      extraGroups = [ "networkmanager" "wheel" ];
-      shell =
-        if cfg.default-shell == "fish" then
-          pkgs.fish
-        else
-          pkgs.bash;
-    };
+    users.users = listToAttrs (map
+      (user:
+        {
+          name = user.username;
+          value = {
+            isNormalUser = true;
+            description = user.name;
+            extraGroups = [ "networkmanager" "wheel" ];
+            shell = pkgs.${user.shell};
+          };
+        }
+      )
+      cfg.users
+    );
   };
 }
