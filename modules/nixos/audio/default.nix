@@ -1,8 +1,9 @@
-{ options, config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.trzpiot.boot;
+
+  cfg = config.trzpiot.audio;
 in
 {
   options.trzpiot.audio = {

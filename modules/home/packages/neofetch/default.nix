@@ -1,7 +1,8 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
+
   cfg = config.trzpiot.packages.neofetch;
 in
 {

@@ -1,16 +1,19 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   inherit (lib) mkEnableOption optionals;
+
   cfg = config.trzpiot.packages.fonts;
 
   customPkgs = {
     blexMonoNerdFont = pkgs.nerdfonts.override {
       fonts = [ "IBMPlexMono" ];
     };
+
     hackNerdFont = pkgs.nerdfonts.override {
       fonts = [ "Hack" ];
     };
+
     jetBrainsMonoNerdFont = pkgs.nerdfonts.override {
       fonts = [ "JetBrainsMono" ];
     };

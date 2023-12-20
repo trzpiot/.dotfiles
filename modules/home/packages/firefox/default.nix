@@ -1,4 +1,4 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf optionals;
@@ -19,6 +19,7 @@ let
       sha256 = "53008cd7f27be61e9f88185e90c865ed896c1c83cb2cc314c99dbcdf73e54405";
       meta = { };
     };
+
     todoist = buildFirefoxXpiAddon rec {
       pname = "todoist";
       version = "11.1";

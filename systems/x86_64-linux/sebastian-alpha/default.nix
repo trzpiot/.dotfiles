@@ -3,10 +3,12 @@
 
   trzpiot = {
     audio.enable = true;
+
     boot = {
       enable = true;
       kernelModules = [ "amdgpu" ];
     };
+
     docker.enable = true;
     gaming.enable = true;
     gnome.enable = true;
@@ -15,6 +17,7 @@
     network.enable = true;
     nix.enable = true;
     security.enable = true;
+
     users = {
       enable = true;
 

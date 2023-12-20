@@ -1,8 +1,9 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   inherit (pkgs) vimPlugins;
   inherit (lib) mkEnableOption mkIf;
+
   cfg = config.trzpiot.packages.neovim;
 
   pluginsWithConfiguration = {

@@ -8,6 +8,7 @@ in
 {
   findOrNull = parameter: search: list:
     findFirst (x: x.${parameter} == search) null list;
+
   mkEnumOption = values: default: description:
     mkOption {
       inherit default description;

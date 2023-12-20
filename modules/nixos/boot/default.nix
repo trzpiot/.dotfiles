@@ -1,8 +1,9 @@
-{ options, config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf mkOption;
   inherit (lib.types) listOf str;
+
   cfg = config.trzpiot.boot;
 in
 {

@@ -1,9 +1,10 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
   inherit (lib.trzpiot) mkStrOption;
   inherit (pkgs.stdenv) isDarwin;
+
   cfg = config.trzpiot.packages.home-manager;
 in
 {

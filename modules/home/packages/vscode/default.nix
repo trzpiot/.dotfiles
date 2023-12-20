@@ -1,9 +1,10 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   inherit (pkgs) vscode-extensions;
   inherit (pkgs.vscode-utils) extensionFromVscodeMarketplace;
   inherit (lib) mkEnableOption mkIf;
+
   cfg = config.trzpiot.packages.vscode;
 
   # TODO: Write script for updating custom extensions

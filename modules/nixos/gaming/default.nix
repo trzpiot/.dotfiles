@@ -1,7 +1,8 @@
-{ options, config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
+
   cfg = config.trzpiot.gaming;
 in
 {

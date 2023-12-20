@@ -1,8 +1,9 @@
-{ options, config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
   inherit (lib.trzpiot) mkStrOption;
+
   cfg = config.trzpiot.packages.git;
 in
 {

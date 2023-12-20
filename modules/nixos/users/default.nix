@@ -5,6 +5,7 @@ let
   inherit (lib) mkEnableOption mkIf mkOption;
   inherit (lib.trzpiot) mkEnumOption mkStrOption;
   inherit (lib.types) listOf submodule;
+
   cfg = config.trzpiot.users;
 
   user = {

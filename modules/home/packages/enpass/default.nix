@@ -1,8 +1,9 @@
-{ options, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   inherit (pkgs) enpass;
   inherit (lib) mkEnableOption mkIf;
+
   cfg = config.trzpiot.packages.enpass;
 in
 {
