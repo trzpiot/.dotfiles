@@ -9,4 +9,4 @@ I try to keep them always up to date (e.g. with the modern tools [Nix Flakes](ht
 If you have any questions about Nix or NixOS, feel free to create an issue or contact the amazing [community](https://nixos.org/community/).
 
 > [!WARNING]  
-> WIP. I am constantly changing things. Use the code or the flake at your own risk.
+> I am constantly changing my dotfiles. Use the code or the flake at your own risk.
