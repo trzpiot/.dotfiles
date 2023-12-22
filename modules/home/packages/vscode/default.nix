@@ -54,6 +54,8 @@ in
             shell-format;
           inherit (vscode-extensions.redhat)
             vscode-yaml;
+          inherit (vscode-extensions.ms-azuretools)
+            vscode-docker;
           inherit (customExtensions.volar)
             vue;
         };
