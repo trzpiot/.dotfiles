@@ -3,9 +3,11 @@
 let
   inherit (pkgs) vscode-extensions;
   inherit (pkgs.vscode-utils) extensionFromVscodeMarketplace;
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) importJSON mkEnableOption mkIf;
 
   cfg = config.trzpiot.packages.vscode;
+
+  settingsJson = importJSON ./settings.json;
 
   # TODO: Write script for updating custom extensions
   customExtensions = {
@@ -25,14 +27,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.file.vscodeSettings = {
-      source = ./settings.json;
-      target = ".config/Code/User/settings.json";
-    };
-
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = false;
+      userSettings = settingsJson;
 
       extensions = builtins.attrValues
         {

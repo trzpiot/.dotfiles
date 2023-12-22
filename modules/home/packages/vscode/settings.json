@@ -1,16 +1,11 @@
 {
-    "workbench.colorTheme": "Dracula",
     "editor.fontFamily": "'BlexMono Nerd Font'",
-    "editor.fontSize": 14,
-    "editor.lineHeight": 1.4,
     "editor.fontLigatures": true,
-    "rust-analyzer.check.command": "clippy",
-    "git.enabled": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.openPositioning": "first",
-    "workbench.editor.showTabs": false,
-    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 14,
     "editor.formatOnSave": true,
+    "editor.lineHeight": 1.4,
+    "files.autoSave": "onFocusChange",
+    "git.enabled": false,
     "nix.enableLanguageServer": true,
     "nix.serverPath": "nil",
     "nix.serverSettings": {
@@ -21,5 +16,12 @@
                 ]
             }
         }
-    }
+    },
+    "redhat.telemetry.enabled": false,
+    "rust-analyzer.check.command": "clippy",
+    "telemetry.telemetryLevel": "off",
+    "workbench.colorTheme": "Dracula",
+    "workbench.editor.openPositioning": "first",
+    "workbench.editor.showTabs": "single",
+    "workbench.iconTheme": "material-icon-theme"
 }
