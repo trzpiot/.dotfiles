@@ -52,6 +52,8 @@ in
             markdown-all-in-one;
           inherit (vscode-extensions.foxundermoon)
             shell-format;
+          inherit (vscode-extensions.redhat)
+            vscode-yaml;
           inherit (customExtensions.volar)
             vue;
         };
