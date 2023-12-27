@@ -20,6 +20,31 @@
     "redhat.telemetry.enabled": false,
     "rust-analyzer.check.command": "clippy",
     "telemetry.telemetryLevel": "off",
+    "todo-tree.general.tags": [
+        "BUG",
+        "FIXME",
+        "TODO"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "BUG": {
+            "foreground": "red",
+            "gutterIcon": true,
+            "iconColour": "red",
+            "opacity": 0
+        },
+        "FIXME": {
+            "foreground": "yellow",
+            "gutterIcon": true,
+            "iconColour": "yellow",
+            "opacity": 0
+        },
+        "TODO": {
+            "foreground": "green",
+            "gutterIcon": true,
+            "iconColour": "green",
+            "opacity": 0
+        }
+    },
     "workbench.colorTheme": "Dracula",
     "workbench.editor.openPositioning": "first",
     "workbench.editor.showTabs": "single",

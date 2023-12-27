@@ -54,6 +54,8 @@ in
             vscode-yaml;
           inherit (vscode-extensions.ms-azuretools)
             vscode-docker;
+          inherit (vscode-extensions.gruntfuggly)
+            todo-tree;
           inherit (customExtensions.volar)
             vue;
         };
