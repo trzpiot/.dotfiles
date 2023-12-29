@@ -28,9 +28,9 @@ in
 
       fonts = {
         atkinsonHyperlegible.enable = true;
-        blexMonoNerdFont.enable = true;
-        hackNerdFont.enable = true;
         inter.enable = true;
+        monaspace.enable = true;
+        monaspiceNerdFont.enable = true;
       };
 
       gimp.enable = true;

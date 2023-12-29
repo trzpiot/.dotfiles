@@ -23,29 +23,29 @@ in
 
         window = {
           padding = {
-            x = 4;
-            y = 4;
+            x = 8;
+            y = 8;
           };
           decorations = "none";
         };
 
         font = {
-          size = 10;
-          offset.y = 2;
+          size = 11;
+          offset.y = 4;
           normal = {
-            family = "Hack Nerd Font";
+            family = "MonaspiceNe Nerd Font";
             style = "Regular";
           };
           bold = {
-            family = "Hack Nerd Font";
+            family = "MonaspiceNe Nerd Font";
             style = "Bold";
           };
           italic = {
-            family = "Hack Nerd Font";
+            family = "MonaspiceNe Nerd Font";
             style = "Italic";
           };
           "bold italic" = {
-            family = "Hack Nerd Font";
+            family = "MonaspiceNe Nerd Font";
             style = "Bold Italic";
           };
         };

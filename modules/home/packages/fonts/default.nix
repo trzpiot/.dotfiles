@@ -17,6 +17,10 @@ let
     jetBrainsMonoNerdFont = pkgs.nerdfonts.override {
       fonts = [ "JetBrainsMono" ];
     };
+
+    monaspiceNerdFont = pkgs.nerdfonts.override {
+      fonts = [ "Monaspace" ];
+    };
   };
 in
 {
@@ -26,6 +30,8 @@ in
     hackNerdFont.enable = mkEnableOption "Hack Nerd Font (Hack)";
     inter.enable = mkEnableOption "Inter";
     jetBrainsMonoNerdFont.enable = mkEnableOption "JetBrainsMono Nerd Font (JetBrains Mono)";
+    monaspace.enable = mkEnableOption "Monaspace";
+    monaspiceNerdFont.enable = mkEnableOption "Monaspice (Monaspace)";
   };
 
   config = {
@@ -34,6 +40,8 @@ in
       ++ optionals cfg.blexMonoNerdFont.enable [ customPkgs.blexMonoNerdFont ]
       ++ optionals cfg.hackNerdFont.enable [ customPkgs.hackNerdFont ]
       ++ optionals cfg.inter.enable [ pkgs.inter ]
-      ++ optionals cfg.jetBrainsMonoNerdFont.enable [ customPkgs.jetBrainsMonoNerdFont ];
+      ++ optionals cfg.jetBrainsMonoNerdFont.enable [ customPkgs.jetBrainsMonoNerdFont ]
+      ++ optionals cfg.monaspace.enable [ pkgs.monaspace ]
+      ++ optionals cfg.monaspiceNerdFont.enable [ customPkgs.monaspiceNerdFont ];
   };
 }

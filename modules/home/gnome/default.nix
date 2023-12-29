@@ -24,7 +24,7 @@ in
       "org/gnome/desktop/interface" = {
         font-name = "Inter 11";
         document-font-name = "Atkinson Hyperlegible 11";
-        monospace-font-name = "Hack Nerd Font 10";
+        monospace-font-name = "Monaspace Neon 11";
         enable-hot-corners = false;
       };
 
