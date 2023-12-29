@@ -27,18 +27,21 @@
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
+            "fontWeight": "bold",
             "foreground": "red",
             "gutterIcon": true,
             "iconColour": "red",
             "opacity": 0
         },
         "FIXME": {
+            "fontWeight": "bold",
             "foreground": "yellow",
             "gutterIcon": true,
             "iconColour": "yellow",
             "opacity": 0
         },
         "TODO": {
+            "fontWeight": "bold",
             "foreground": "green",
             "gutterIcon": true,
             "iconColour": "green",
