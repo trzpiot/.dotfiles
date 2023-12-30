@@ -13,7 +13,6 @@ in
   config = mkIf cfg.enable {
     programs.zoxide = {
       enable = true;
-      enableFishIntegration = true;
       options = [
         "--cmd cd"
       ];

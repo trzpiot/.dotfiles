@@ -16,9 +16,6 @@ in
       target = ".dircolors";
     };
 
-    programs.dircolors = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+    programs.dircolors.enable = true;
   };
 }
