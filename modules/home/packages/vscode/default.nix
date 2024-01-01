@@ -56,6 +56,8 @@ in
             vscode-docker;
           inherit (vscode-extensions.gruntfuggly)
             todo-tree;
+          inherit (vscode-extensions.serayuzgur)
+            crates;
           inherit (customExtensions.volar)
             vue;
         };
