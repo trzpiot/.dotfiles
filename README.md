@@ -1,6 +1,6 @@
 # dotfiles
 
-[![Maintenance](https://img.shields.io/maintenance/active/2023)](https://github.com/trzpiot/dotfiles/commits/main)
+[![Maintenance](https://img.shields.io/maintenance/active/2024)](https://github.com/trzpiot/dotfiles/commits/main)
 [![Nix Flake](https://img.shields.io/badge/Nix%20Flake-%235277C3?logo=snowflake)](https://nixos.wiki/wiki/Flakes)
 
 These are my personal dotfiles. 🔧
