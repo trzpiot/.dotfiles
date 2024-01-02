@@ -32,7 +32,10 @@ in
 
       plugins = builtins.attrValues {
         inherit (vimPlugins)
-          lualine-nvim;
+          lualine-nvim
+          neorg;
+        inherit (vimPlugins.nvim-treesitter)
+          withAllGrammars;
         inherit (pluginsWithConfiguration)
           dracula-nvim;
       };
