@@ -35,6 +35,7 @@ in
       "org/gnome/shell" = {
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"
+          "clipboard-history@alexsaveau.dev"
           "paperwm@paperwm.github.com"
         ];
 

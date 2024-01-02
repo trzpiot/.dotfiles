@@ -42,8 +42,13 @@ in
       };
 
       gnome-boxes.enable = true;
-      gnome-extensions.appindicator.enable = true;
-      gnome-extensions.paperwm.enable = true;
+
+      gnome-extensions = {
+        appindicator.enable = true;
+        clipboard-history.enable = true;
+        paperwm.enable = true;
+      };
+
       gnome-multi-writer.enable = true;
       godot.enable = true;
 
