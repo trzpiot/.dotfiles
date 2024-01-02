@@ -58,6 +58,8 @@ in
             todo-tree;
           inherit (vscode-extensions.serayuzgur)
             crates;
+          inherit (vscode-extensions.sumneko)
+            lua;
           inherit (customExtensions.volar)
             vue;
         };
