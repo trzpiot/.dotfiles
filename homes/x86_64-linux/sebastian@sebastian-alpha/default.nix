@@ -64,17 +64,7 @@ in
       lazygit.enable = true;
       logseq.enable = true;
       neofetch.enable = true;
-
-      neovim = {
-        enable = true;
-
-        neorg = {
-          workspaces = {
-            notes = "~/Workspace/github/trzpiot/private/dev-knowledge-base";
-          };
-        };
-      };
-
+      neovim.enable = true;
       nil.enable = true;
       nixpkgs-fmt.enable = true;
       spotify.enable = true;
