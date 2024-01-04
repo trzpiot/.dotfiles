@@ -67,6 +67,7 @@ in
       neovim.enable = true;
       nil.enable = true;
       nixpkgs-fmt.enable = true;
+      obsidian.enable = true;
       spotify.enable = true;
       starship.enable = true;
       steam.enable = true;

@@ -36,7 +36,7 @@
       channels-config = {
         allowUnfree = true;
         permittedInsecurePackages = [
-          # TODO: Remove as soon as Logseq has updated the Electron version
+          # TODO: Remove as soon as Logseq & Obsidian has updated the Electron version
           "electron-25.9.0"
         ];
       };
