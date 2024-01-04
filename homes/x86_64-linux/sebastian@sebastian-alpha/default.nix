@@ -60,6 +60,7 @@ in
       };
 
       idea-community.enable = true;
+      inkscape.enable = true;
       jq.enable = true;
       lazygit.enable = true;
       logseq.enable = true;
