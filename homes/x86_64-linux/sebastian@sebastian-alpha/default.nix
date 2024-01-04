@@ -63,7 +63,6 @@ in
       inkscape.enable = true;
       jq.enable = true;
       lazygit.enable = true;
-      logseq.enable = true;
       neofetch.enable = true;
       neovim.enable = true;
       nil.enable = true;
