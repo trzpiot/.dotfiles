@@ -31,8 +31,10 @@
     };
 
     virtualisation = {
-      docker.enable = true;
-      podman.enable = true;
+      podman = {
+        enable = true;
+        asDockerReplacement = true;
+      };
     };
   };
 
