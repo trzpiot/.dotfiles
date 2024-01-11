@@ -28,6 +28,7 @@ in
 
       fonts = {
         atkinsonHyperlegible.enable = true;
+        hubotSans.enable = true;
         inter.enable = true;
         monaspace.enable = true;
         monaspiceNerdFont.enable = true;
