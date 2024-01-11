@@ -30,6 +30,7 @@ in
         atkinsonHyperlegible.enable = true;
         hubotSans.enable = true;
         inter.enable = true;
+        monaSans.enable = true;
         monaspace.enable = true;
         monaspiceNerdFont.enable = true;
       };
