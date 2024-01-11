@@ -68,6 +68,7 @@ in
       nil.enable = true;
       nixpkgs-fmt.enable = true;
       obsidian.enable = true;
+      ollama.enable = true;
       spotify.enable = true;
       starship.enable = true;
       steam.enable = true;
