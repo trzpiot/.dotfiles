@@ -31,6 +31,7 @@ in
     hubotSans.enable = mkEnableOption "Hubot Sans";
     inter.enable = mkEnableOption "Inter";
     jetBrainsMonoNerdFont.enable = mkEnableOption "JetBrainsMono Nerd Font (JetBrains Mono)";
+    monaSans.enable = mkEnableOption "Mona Sans";
     monaspace.enable = mkEnableOption "Monaspace";
     monaspiceNerdFont.enable = mkEnableOption "Monaspice (Monaspace)";
   };
@@ -43,6 +44,7 @@ in
       ++ optionals cfg.hubotSans.enable [ pkgs.hubot-sans ]
       ++ optionals cfg.inter.enable [ pkgs.inter ]
       ++ optionals cfg.jetBrainsMonoNerdFont.enable [ customPkgs.jetBrainsMonoNerdFont ]
+      ++ optionals cfg.monaSans.enable [ pkgs.mona-sans ]
       ++ optionals cfg.monaspace.enable [ pkgs.monaspace ]
       ++ optionals cfg.monaspiceNerdFont.enable [ customPkgs.monaspiceNerdFont ];
   };
