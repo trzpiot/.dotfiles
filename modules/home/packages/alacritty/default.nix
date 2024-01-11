@@ -12,14 +12,14 @@ in
 
   config = mkIf cfg.enable {
     home.file.alacrittyDracula = {
-      source = ./dracula.yml;
-      target = ".config/alacritty/dracula.yml";
+      source = ./dracula.toml;
+      target = ".config/alacritty/dracula.toml";
     };
 
     programs.alacritty = {
       enable = true;
       settings = {
-        import = [ "~/.config/alacritty/dracula.yml" ];
+        import = [ "~/.config/alacritty/dracula.toml" ];
 
         window = {
           padding = {
@@ -44,7 +44,7 @@ in
             family = "MonaspiceNe Nerd Font";
             style = "Italic";
           };
-          "bold italic" = {
+          bold_italic = {
             family = "MonaspiceNe Nerd Font";
             style = "Bold Italic";
           };
