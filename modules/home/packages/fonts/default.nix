@@ -28,6 +28,7 @@ in
     atkinsonHyperlegible.enable = mkEnableOption "Atkinson Hyperlegible";
     blexMonoNerdFont.enable = mkEnableOption "BlexMono Nerd Font (IBM Plex Mono)";
     hackNerdFont.enable = mkEnableOption "Hack Nerd Font (Hack)";
+    hubotSans.enable = mkEnableOption "Hubot Sans";
     inter.enable = mkEnableOption "Inter";
     jetBrainsMonoNerdFont.enable = mkEnableOption "JetBrainsMono Nerd Font (JetBrains Mono)";
     monaspace.enable = mkEnableOption "Monaspace";
@@ -39,6 +40,7 @@ in
       ++ optionals cfg.atkinsonHyperlegible.enable [ pkgs.atkinson-hyperlegible ]
       ++ optionals cfg.blexMonoNerdFont.enable [ customPkgs.blexMonoNerdFont ]
       ++ optionals cfg.hackNerdFont.enable [ customPkgs.hackNerdFont ]
+      ++ optionals cfg.hubotSans.enable [ pkgs.hubot-sans ]
       ++ optionals cfg.inter.enable [ pkgs.inter ]
       ++ optionals cfg.jetBrainsMonoNerdFont.enable [ customPkgs.jetBrainsMonoNerdFont ]
       ++ optionals cfg.monaspace.enable [ pkgs.monaspace ]
