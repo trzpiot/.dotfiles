@@ -6,6 +6,8 @@ let
   inherit (pkgs.stdenv) isDarwin;
 
   cfg = config.trzpiot.packages.fish;
+  fastfetchFg = config.trzpiot.packages.fastfetch;
+  neofetchCfg = config.trzpiot.packages.neofetch;
 in
 {
   options.trzpiot.packages.fish = {
@@ -22,7 +24,12 @@ in
         complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'switch' -d 'Switch to a new NixOS configuration'
         complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'update' -d 'Update NixOS and switch to a new configuration'
       '';
-      interactiveShellInit = "fastfetch";
+      interactiveShellInit =
+        if fastfetchFg.enable
+        then "fastfetch"
+        else if neofetchCfg.enable
+        then "neofetch"
+        else null;
 
       shellAliases = {
         cat = "bat";
