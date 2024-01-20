@@ -22,6 +22,7 @@ in
     home = {
       stateVersion = "23.05";
       username = cfg.username;
+
       homeDirectory =
         if cfg.homeDirectory != null then
           cfg.homeDirectory

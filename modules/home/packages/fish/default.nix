@@ -1,7 +1,9 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption mkIf optionalAttrs;
+  inherit (lib.trzpiot) isNixOS;
+  inherit (pkgs.stdenv) isDarwin;
 
   cfg = config.trzpiot.packages.fish;
 in
@@ -20,25 +22,28 @@ in
         complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'switch' -d 'Switch to a new NixOS configuration'
         complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'update' -d 'Update NixOS and switch to a new configuration'
       '';
-      interactiveShellInit = "neofetch";
+      interactiveShellInit = "fastfetch";
 
       shellAliases = {
         cat = "bat";
         find = "fd";
         lg = "lazygit";
+      } // optionalAttrs isDarwin {
+        vi = "nvim";
+        vim = "nvim";
       };
 
       functions = {
-        nixos-custom = {
-          body = builtins.readFile functions/nixos-custom.fish;
-          description = "Custom commands for NixOS";
-        };
-
         gitignore = "curl -sL https://www.gitignore.io/api/$argv";
 
         devenv = {
           body = builtins.readFile functions/devenv-init.fish;
           description = "Initialize a develop environment (with devenv)";
+        };
+      } // optionalAttrs isNixOS {
+        nixos-custom = {
+          body = builtins.readFile functions/nixos-custom.fish;
+          description = "Custom commands for NixOS";
         };
       };
     };

@@ -1,7 +1,8 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
+  inherit (pkgs.stdenv) isDarwin;
 
   cfg = config.trzpiot.packages.alacritty;
 in
@@ -26,7 +27,7 @@ in
             x = 8;
             y = 8;
           };
-          decorations = "none";
+          decorations = if isDarwin then "buttonless" else "none";
         };
 
         font = {
