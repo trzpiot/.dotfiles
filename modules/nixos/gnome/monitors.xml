@@ -7,7 +7,7 @@
       <primary>yes</primary>
       <monitor>
         <monitorspec>
-          <connector>DP-1</connector>
+          <connector>DP-2</connector>
           <vendor>SAM</vendor>
           <product>C34H89x</product>
           <serial>HTOMA00881</serial>
@@ -21,7 +21,7 @@
     </logicalmonitor>
     <disabled>
       <monitorspec>
-        <connector>DP-2</connector>
+        <connector>DP-1</connector>
         <vendor>LEN</vendor>
         <product>L28u-35</product>
         <serial>U1AMZ343</serial>
