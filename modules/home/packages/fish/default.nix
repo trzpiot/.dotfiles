@@ -2,8 +2,7 @@
 
 let
   inherit (lib) mkEnableOption mkIf optionalAttrs;
-  inherit (lib.trzpiot) isNixOS;
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv) isDarwin isLinux;
 
   cfg = config.trzpiot.packages.fish;
   fastfetchFg = config.trzpiot.packages.fastfetch;
@@ -42,7 +41,7 @@ in
 
       functions = {
         gitignore = "curl -sL https://www.gitignore.io/api/$argv";
-      } // optionalAttrs isNixOS {
+      } // optionalAttrs isLinux {
         nixos-custom = {
           body = builtins.readFile functions/nixos-custom.fish;
           description = "Custom commands for NixOS";
