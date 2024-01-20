@@ -42,11 +42,6 @@ in
 
       functions = {
         gitignore = "curl -sL https://www.gitignore.io/api/$argv";
-
-        devenv = {
-          body = builtins.readFile functions/devenv-init.fish;
-          description = "Initialize a develop environment (with devenv)";
-        };
       } // optionalAttrs isNixOS {
         nixos-custom = {
           body = builtins.readFile functions/nixos-custom.fish;
