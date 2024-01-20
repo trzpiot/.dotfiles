@@ -3,7 +3,7 @@
 let
   inherit (lib) mkOption;
   inherit (lib.lists) findFirst;
-  inherit (lib.types) enum nullOr package str;
+  inherit (lib.types) enum int nullOr package str;
 in
 {
   findOrNull = parameter: search: list:
@@ -19,6 +19,12 @@ in
     mkOption {
       inherit default description;
       type = (nullOr str);
+    };
+
+  mkIntOption = default: description:
+    mkOption {
+      inherit default description;
+      type = (nullOr int);
     };
 
   mkPackageOption = default: description:
