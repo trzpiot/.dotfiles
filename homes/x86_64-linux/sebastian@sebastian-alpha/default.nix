@@ -74,6 +74,7 @@ in
       spotify.enable = true;
       starship.enable = true;
       steam.enable = true;
+      teamspeak.enable = true;
       texlive.enable = true;
       texstudio.enable = true;
       todoist.enable = true;
