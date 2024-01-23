@@ -73,7 +73,12 @@ in
       ollama.enable = true;
       spotify.enable = true;
       starship.enable = true;
-      steam.enable = true;
+
+      steam = {
+        enable = true;
+        protonGeCustom.enable = true;
+      };
+
       teamspeak.enable = true;
       texlive.enable = true;
       texstudio.enable = true;
