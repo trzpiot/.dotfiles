@@ -23,6 +23,7 @@ in
       monaspiceNerdFont.enable = true;
     };
 
+    gimp.enable = true;
 
     git = {
       enable = true;
