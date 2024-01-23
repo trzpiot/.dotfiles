@@ -7,6 +7,7 @@ in
   trzpiot.packages = {
     alacritty.enable = true;
     bat.enable = true;
+    bruno.enable = true;
     delta.enable = true;
     dircolors.enable = true;
     direnv.enable = true;
