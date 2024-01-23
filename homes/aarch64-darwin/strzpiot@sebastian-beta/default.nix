@@ -23,6 +23,13 @@ in
       monaspiceNerdFont.enable = true;
     };
 
+
+    git = {
+      enable = true;
+      name = user.name;
+      email = user.email;
+    };
+
     home-manager = {
       enable = true;
       username = user.username;
