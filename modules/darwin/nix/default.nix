@@ -11,11 +11,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    nix.package = pkgs.nixUnstable;
     services.nix-daemon.enable = true;
-
-    nix.settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
   };
 }
