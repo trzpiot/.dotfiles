@@ -3,9 +3,11 @@
 let
   inherit (lib) mkEnableOption mkIf optionalAttrs;
   inherit (pkgs.stdenv) isDarwin isLinux;
+  inherit (lib.snowfall.fs) get-file;
 
   cfg = config.trzpiot.packages.fish;
-  fastfetchFg = config.trzpiot.packages.fastfetch;
+  fastfetchCfg = config.trzpiot.packages.fastfetch;
+  fastfetchCfgFile = get-file "modules/home/packages/fastfetch/config.jsonc";
   neofetchCfg = config.trzpiot.packages.neofetch;
 in
 {
@@ -24,8 +26,8 @@ in
         complete -f -c nixos-custom -n '__fish_use_subcommand' -a 'update' -d 'Update NixOS and switch to a new configuration'
       '';
       interactiveShellInit =
-        if fastfetchFg.enable
-        then "fastfetch"
+        if fastfetchCfg.enable
+        then "fastfetch - c ${fastfetchCfgFile}"
         else if neofetchCfg.enable
         then "neofetch"
         else null;
@@ -50,3 +52,4 @@ in
     };
   };
 }
+
