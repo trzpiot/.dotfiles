@@ -27,8 +27,8 @@ in
 
     git = {
       enable = true;
-      name = user.name;
-      email = user.email;
+      userName = user.name;
+      userEmail = user.email;
     };
 
     home-manager = {

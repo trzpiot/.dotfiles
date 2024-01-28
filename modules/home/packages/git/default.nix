@@ -1,24 +1,27 @@
 { config, lib, ... }:
 
 let
+  inherit (config.trzpiot.packages.git) enable userName userEmail;
   inherit (lib) mkEnableOption mkIf;
   inherit (lib.trzpiot) mkStrOption;
-
-  cfg = config.trzpiot.packages.git;
 in
 {
   options.trzpiot.packages.git = {
     enable = mkEnableOption "Git";
-    name = mkStrOption null "The full name of the user.";
-    email = mkStrOption null "The e-mail address of the user.";
+    userName = mkStrOption null "The full name of the user.";
+    userEmail = mkStrOption null "The e-mail address of the user.";
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf enable {
     programs.git = {
-      enable = true;
-      userName = cfg.name;
-      userEmail = cfg.email;
-      extraConfig.init.defaultBranch = "main";
+      inherit enable userName userEmail;
+
+      extraConfig = {
+        core.whitespace = "trailing-space,space-before-tab";
+        init.defaultBranch = "main";
+        pull.rebase = true;
+        push.autoSetupRemote = true;
+      };
     };
   };
 }
