@@ -27,7 +27,7 @@ in
       '';
       interactiveShellInit =
         if fastfetchCfg.enable
-        then "fastfetch - c ${fastfetchCfgFile}"
+        then "fastfetch -c ${fastfetchCfgFile}"
         else if neofetchCfg.enable
         then "neofetch"
         else null;
