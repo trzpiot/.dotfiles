@@ -1,7 +1,7 @@
 <div align="center">
 
 
-<img src="./assets/logo.svg" width=128 height=64>
+<img src="./assets/logo.svg" width=128>
 
 # .dotfiles
 
