@@ -13,9 +13,12 @@ in
   config = mkIf cfg.enable {
     services.xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = "";
       desktopManager.gnome.enable = true;
+
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
 
       displayManager.gdm = {
         enable = true;
