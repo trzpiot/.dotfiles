@@ -1,13 +1,13 @@
 { config, pkgs, lib, ... }:
 
 let
-  inherit (lib) mkEnableOption mkIf optionals;
+  inherit (builtins) attrValues;
+  inherit (config.trzpiot.packages.firefox) enable;
+  inherit (config.trzpiot.packages) enpass todoist;
+  inherit (lib) mkEnableOption mkIf mkMerge importJSON optionals;
+  inherit (pkgs.trzpiot) firefox-gnome-theme;
   inherit (pkgs.nur.repos.rycee) firefox-addons;
   inherit (pkgs.nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
-
-  cfg = config.trzpiot.packages.firefox;
-  enpassCfg = config.trzpiot.packages.enpass;
-  todoistCfg = config.trzpiot.packages.todoist;
 
   # TODO: Write script for updating custom addons
   customAddons = {
@@ -29,30 +29,46 @@ let
       meta = { };
     };
   };
+
+  # TODO: Write script for updating settings
+  # Source: https://www.privacy-handbuch.de/download/minimal/user.js
+  privacySettings = importJSON ./settings.json;
+  customSettings = {
+    "browser.translations.enable" = false;
+    "svg.context-properties.content.enabled" = true;
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+  };
 in
 {
   options.trzpiot.packages.firefox = {
     enable = mkEnableOption "Firefox";
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf enable {
+    home.file."firefox-gnome-theme" = {
+      source = firefox-gnome-theme;
+      target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
+    };
+
     programs.firefox = {
-      enable = true;
+      inherit enable;
 
-      # TODO: Write script for updating settings
-      # Source: https://www.privacy-handbuch.de/download/minimal/user.js
       profiles.default = {
-        settings = lib.importJSON ./settings.json;
+        settings = mkMerge [ privacySettings customSettings ];
 
-        extensions =
-          builtins.attrValues
-            {
-              inherit (firefox-addons)
-                ublacklist
-                ublock-origin;
-            }
-          ++ optionals enpassCfg.enable [ customAddons.enpass ]
-          ++ optionals todoistCfg.enable [ customAddons.todoist ];
+        userChrome = ''
+          @import "firefox-gnome-theme/userChrome.css";
+          @import "firefox-gnome-theme/userContent.css"; 
+        '';
+
+        extensions = attrValues
+          {
+            inherit (firefox-addons)
+              ublacklist
+              ublock-origin;
+          }
+        ++ optionals enpass.enable [ customAddons.enpass ]
+        ++ optionals todoist.enable [ customAddons.todoist ];
       };
     };
   };
