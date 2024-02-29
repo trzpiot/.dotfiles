@@ -66,6 +66,7 @@ in
       inkscape.enable = true;
       jq.enable = true;
       lazygit.enable = true;
+      libreoffice.enable = true;
       neovim.enable = true;
       nil.enable = true;
       nixpkgs-fmt.enable = true;
