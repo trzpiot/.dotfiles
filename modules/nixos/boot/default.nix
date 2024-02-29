@@ -1,14 +1,15 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
+  inherit (config.trzpiot.boot) enable kernel kernelModules;
   inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib.trzpiot) mkEnumOption;
   inherit (lib.types) listOf str;
-
-  cfg = config.trzpiot.boot;
 in
 {
   options.trzpiot.boot = {
     enable = mkEnableOption "Booting";
+    kernel = mkEnumOption [ "latest" "zen" ] "zen" "The Linux kernel to use.";
 
     kernelModules = mkOption {
       type = listOf str;
@@ -18,8 +19,10 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf enable {
     boot = {
+      kernelPackages = pkgs."linuxPackages_${kernel}";
+
       loader = {
         systemd-boot = {
           enable = true;
@@ -30,7 +33,7 @@ in
       };
 
       initrd = {
-        kernelModules = cfg.kernelModules;
+        inherit kernelModules;
       };
     };
   };
