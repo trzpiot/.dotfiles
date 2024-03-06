@@ -13,10 +13,10 @@ let
   customAddons = {
     enpass = buildFirefoxXpiAddon rec {
       pname = "enpass";
-      version = "6.9.4";
+      version = "6.9.4.1";
       addonId = "firefox-enpass@enpass.io";
       url = "https://addons.mozilla.org/firefox/downloads/file/4195847/enpass_password_manager-${version}.xpi";
-      sha256 = "53008cd7f27be61e9f88185e90c865ed896c1c83cb2cc314c99dbcdf73e54405";
+      sha256 = "sha256-UwCM1/J75h6fiBhekMhl7YlsHIPLLMMUyZ2833PlRAU=";
       meta = { };
     };
 
@@ -25,7 +25,7 @@ let
       version = "11.1";
       addonId = "support@todoist.com";
       url = "https://addons.mozilla.org/firefox/downloads/file/4114398/todoist-${version}.xpi";
-      sha256 = "46b4aa72e7f3099fc40d28078bed0910e80a635b532eb62074ed3ec778ae0e86";
+      sha256 = "sha256-RrSqcufzCZ/EDSgHi+0JEOgKY1tTLrYgdO0+x3iuDoY=";
       meta = { };
     };
   };
