@@ -13,7 +13,6 @@ in
   config = mkIf cfg.enable {
     programs.eza = {
       enable = true;
-      enableAliases = true;
       git = true;
     };
   };
