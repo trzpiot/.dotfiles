@@ -13,7 +13,7 @@ in
   config = mkIf cfg.enable {
     programs.lazygit = {
       enable = true;
-      settings.git.paging.pager = "delta --syntax-theme 'Dracula' --paging=never";
+      settings.git.paging.pager = "delta --dark --syntax-theme 'Dracula' --paging=never";
     };
   };
 }
