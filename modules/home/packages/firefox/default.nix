@@ -2,7 +2,7 @@
 
 let
   inherit (builtins) attrValues;
-  inherit (config.trzpiot.packages.firefox) enable;
+  inherit (config.trzpiot.packages.firefox) enable kagi;
   inherit (config.trzpiot.packages) enpass todoist;
   inherit (lib) mkEnableOption mkIf mkMerge importJSON optionals;
   inherit (pkgs.trzpiot) firefox-gnome-theme;
@@ -17,6 +17,15 @@ let
       addonId = "firefox-enpass@enpass.io";
       url = "https://addons.mozilla.org/firefox/downloads/file/4195847/enpass_password_manager-${version}.xpi";
       sha256 = "sha256-UwCM1/J75h6fiBhekMhl7YlsHIPLLMMUyZ2833PlRAU=";
+      meta = { };
+    };
+
+    kagi = buildFirefoxXpiAddon rec {
+      pname = "kagi";
+      version = "0.3.8";
+      addonId = "search@kagi.com";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4173642/kagi_search_for_firefox-${version}.xpi";
+      sha256 = "sha256-l99uONf5Ux7/9TYMdE0/MjhtcomXXtXrgYSR+9zs8gs=";
       meta = { };
     };
 
@@ -42,6 +51,7 @@ in
 {
   options.trzpiot.packages.firefox = {
     enable = mkEnableOption "Firefox";
+    kagi.enable = mkEnableOption "Kagi";
   };
 
   config = mkIf enable {
@@ -68,6 +78,7 @@ in
               ublock-origin;
           }
         ++ optionals enpass.enable [ customAddons.enpass ]
+        ++ optionals kagi.enable [ customAddons.kagi ]
         ++ optionals todoist.enable [ customAddons.todoist ];
       };
     };
