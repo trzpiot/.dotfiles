@@ -46,6 +46,8 @@ let
     "browser.translations.enable" = false;
     "svg.context-properties.content.enabled" = true;
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+    "gnomeTheme.hideSingleTab" = true;
+    "gnomeTheme.tabsAsHeaderbar" = true;
   };
 in
 {
