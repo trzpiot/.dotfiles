@@ -24,7 +24,12 @@ in
       eza.enable = true;
       fastfetch.enable = true;
       fd.enable = true;
-      firefox.enable = true;
+
+      firefox = {
+        enable = true;
+        kagi.enable = true;
+      };
+
       fish.enable = true;
 
       fonts = {
