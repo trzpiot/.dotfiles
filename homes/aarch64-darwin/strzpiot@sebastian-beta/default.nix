@@ -48,6 +48,7 @@ in
     obsidian.enable = true;
     ollama.enable = true;
     podman.enable = true;
+    prusa-slicer.enable = true;
     starship.enable = true;
     vscode.enable = true;
     zoxide.enable = true;
