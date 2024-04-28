@@ -27,7 +27,6 @@ in
 
       firefox = {
         enable = true;
-        kagi.enable = true;
       };
 
       fish.enable = true;
