@@ -27,6 +27,7 @@ in
 
       firefox = {
         enable = true;
+        abovevtt.enable = true;
       };
 
       fish.enable = true;
