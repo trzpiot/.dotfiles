@@ -3,7 +3,7 @@
 let
   inherit (config.trzpiot.packages.steam) enable protonGeCustom;
   inherit (lib) mkEnableOption mkIf optionals;
-  inherit (pkgs) steam;
+  inherit (pkgs) steam steam-run;
   inherit (pkgs.trzpiot) proton-ge-custom;
 in
 {
@@ -14,7 +14,7 @@ in
 
   config = mkIf enable {
     home = {
-      packages = [ steam ] ++ optionals protonGeCustom.enable [ proton-ge-custom ];
+      packages = [ steam steam-run ] ++ optionals protonGeCustom.enable [ proton-ge-custom ];
 
       sessionVariables = mkIf protonGeCustom.enable {
         STEAM_EXTRA_COMPAT_TOOLS_PATHS = "${proton-ge-custom}";
