@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   inherit (lib) mkEnableOption mkIf;
@@ -11,6 +11,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    nix = {
+      package = pkgs.nixVersions.latest;
+      settings.experimental-features = [ "nix-command" "flakes" ];
+    };
   };
 }

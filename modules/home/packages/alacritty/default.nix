@@ -23,28 +23,33 @@ in
         import = [ "~/.config/alacritty/dracula.toml" ];
 
         window = {
+          decorations = "buttonless";
+
           padding = {
             x = 8;
             y = 8;
           };
-          decorations = if isDarwin then "buttonless" else "none";
         };
 
         font = {
-          size = 11;
+          size = 10;
           offset.y = 4;
+
           normal = {
             family = "MonaspiceNe Nerd Font";
             style = "Regular";
           };
+
           bold = {
             family = "MonaspiceNe Nerd Font";
             style = "Bold";
           };
+
           italic = {
             family = "MonaspiceNe Nerd Font";
             style = "Italic";
           };
+
           bold_italic = {
             family = "MonaspiceNe Nerd Font";
             style = "Bold Italic";

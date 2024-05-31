@@ -6,15 +6,12 @@ in
 {
 
   trzpiot = {
-    gnome.enable = true;
-
     packages = {
       alacritty.enable = true;
       aseprite.enable = true;
       bat.enable = true;
       bruno.enable = true;
       chromium.enable = true;
-      dconf-editor.enable = true;
       delta.enable = true;
       dircolors.enable = true;
       direnv.enable = true;
@@ -49,15 +46,6 @@ in
         userEmail = user.email;
       };
 
-      gnome-boxes.enable = true;
-
-      gnome-extensions = {
-        appindicator.enable = true;
-        clipboard-history.enable = true;
-        paperwm.enable = true;
-      };
-
-      gnome-multi-writer.enable = true;
       godot.enable = true;
 
       home-manager = {

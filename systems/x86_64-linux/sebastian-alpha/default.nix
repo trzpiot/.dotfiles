@@ -10,7 +10,12 @@
     };
 
     gaming.enable = true;
-    gnome.enable = true;
+
+    kde = {
+      enable = true;
+      videoDrivers = [ "amdgpu" ];
+    };
+
     home-manager.enable = true;
     locale.enable = true;
     network.enable = true;
