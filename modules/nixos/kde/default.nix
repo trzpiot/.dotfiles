@@ -36,7 +36,7 @@ in
 
       xkb = {
         layout = "us";
-        variant = "";
+        variant = "intl";
       };
     };
 
