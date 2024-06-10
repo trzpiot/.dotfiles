@@ -12,7 +12,7 @@ let
   customAddons = {
     abovevtt = buildFirefoxXpiAddon rec {
       pname = "abovevtt";
-      version = "1.12";
+      version = "1.17";
       addonId = "{52e126d4-d2d7-483a-a0a1-6e8aace23253}";
       url = "https://addons.mozilla.org/firefox/downloads/file/4268944/abovevtt-${version}.xpi";
       sha256 = "sha256-8qzAuCYXPjX7HUi5yOjfytoq5Sj3wSiCpMuvrIGcf80=";
@@ -30,7 +30,7 @@ let
 
     todoist = buildFirefoxXpiAddon rec {
       pname = "todoist";
-      version = "11.1";
+      version = "11.2";
       addonId = "support@todoist.com";
       url = "https://addons.mozilla.org/firefox/downloads/file/4114398/todoist-${version}.xpi";
       sha256 = "sha256-RrSqcufzCZ/EDSgHi+0JEOgKY1tTLrYgdO0+x3iuDoY=";
