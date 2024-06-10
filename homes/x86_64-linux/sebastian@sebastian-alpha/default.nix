@@ -65,6 +65,7 @@ in
       nixpkgs-fmt.enable = true;
       obsidian.enable = true;
       ollama.enable = true;
+      signal-desktop.enable = true;
       spotify.enable = true;
       starship.enable = true;
 
