@@ -11,6 +11,7 @@ in
     delta.enable = true;
     dircolors.enable = true;
     direnv.enable = true;
+    discord.enable = true;
     eza.enable = true;
     fastfetch.enable = true;
     fd.enable = true;
