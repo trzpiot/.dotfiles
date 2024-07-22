@@ -15,8 +15,8 @@ let
       vue = extensionFromVscodeMarketplace {
         name = "volar";
         publisher = "Vue";
-        version = "2.0.5";
-        sha256 = "sha256-ii5ySYDqreamwPHspHvaeDnRfQ2F+tIEUDmrii58OeI=";
+        version = "2.0.26";
+        sha256 = "sha256-EeJT4lG361TwpsvTVO0oFosHBtWnyiSRyCVcCsjpSBI=";
       };
     };
   };
