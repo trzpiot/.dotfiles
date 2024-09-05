@@ -49,6 +49,7 @@ in
     obsidian.enable = true;
     ollama.enable = true;
     podman.enable = true;
+    ssh.enable = true;
     starship.enable = true;
     vscode.enable = true;
     zoxide.enable = true;
