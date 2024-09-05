@@ -56,8 +56,8 @@ in
             vscode-docker;
           inherit (vscode-extensions.gruntfuggly)
             todo-tree;
-          inherit (vscode-extensions.serayuzgur)
-            crates;
+          inherit (vscode-extensions.fill-labs)
+            dependi;
           inherit (vscode-extensions.sumneko)
             lua;
           inherit (customExtensions.volar)
