@@ -27,8 +27,6 @@ in
       casks = [
         "google-chrome"
 
-        # TODO: Not available in Nixpkgs for aarch64-darwin
-        "orcaslicer"
 
         # TODO: Outdated in Nixpkgs for aarch64-darwin
         "spotify"
