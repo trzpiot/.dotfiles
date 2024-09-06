@@ -55,6 +55,7 @@ in
         email = user.email;
       };
 
+      huenicorn.enable = true;
       idea-community.enable = true;
       inkscape.enable = true;
       jq.enable = true;
