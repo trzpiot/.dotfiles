@@ -32,7 +32,7 @@ in
         };
 
         font = {
-          size = 10;
+          size = 11;
           offset.y = 4;
 
           normal = {
