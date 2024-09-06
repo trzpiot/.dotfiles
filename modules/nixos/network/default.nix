@@ -16,7 +16,10 @@ in
 
       networkmanager = {
         enable = true;
-        wifi.backend = "iwd";
+        wifi = {
+          backend = "iwd";
+          powersave = false;
+        };
       };
     };
   };
