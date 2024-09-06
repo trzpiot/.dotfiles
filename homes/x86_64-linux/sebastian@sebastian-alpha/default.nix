@@ -65,6 +65,7 @@ in
       nixfmt.enable = true;
       obsidian.enable = true;
       ollama.enable = true;
+      r2modman.enable = true;
       signal-desktop.enable = true;
       spotify.enable = true;
       starship.enable = true;
