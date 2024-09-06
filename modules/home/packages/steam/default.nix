@@ -1,23 +1,36 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
-  inherit (config.trzpiot.packages.steam) enable protonGeCustom;
-  inherit (lib) mkEnableOption mkIf optionals;
-  inherit (pkgs) mono steam steam-run;
-  inherit (pkgs.trzpiot) proton-ge-custom;
+  inherit (config.trzpiot.packages.steam) enable protonGe;
+  inherit (lib) mkEnableOption mkIf;
+  inherit (pkgs)
+    mono
+    proton-ge-bin
+    steam
+    steam-run
+    ;
 in
 {
   options.trzpiot.packages.steam = {
     enable = mkEnableOption "Steam";
-    protonGeCustom.enable = mkEnableOption "proton-ge-custom";
+    protonGe.enable = mkEnableOption "Proton GE";
   };
 
   config = mkIf enable {
     home = {
-      packages = [ mono steam steam-run ] ++ optionals protonGeCustom.enable [ proton-ge-custom ];
+      packages = [
+        mono
+        steam
+        steam-run
+      ];
 
-      sessionVariables = mkIf protonGeCustom.enable {
-        STEAM_EXTRA_COMPAT_TOOLS_PATHS = "${proton-ge-custom}";
+      sessionVariables = mkIf protonGe.enable {
+        STEAM_EXTRA_COMPAT_TOOLS_PATHS = "${proton-ge-bin}";
       };
     };
   };

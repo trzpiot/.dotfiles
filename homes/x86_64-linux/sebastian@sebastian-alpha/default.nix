@@ -71,7 +71,7 @@ in
 
       steam = {
         enable = true;
-        protonGeCustom.enable = true;
+        protonGe.enable = true;
       };
 
       teamspeak.enable = true;

@@ -53,7 +53,6 @@ This directory contains the configurations for [NixOS](./modules/nixos/), [Home 
 
 This directory contains packages that I need but are not in [Nixpkgs](https://github.com/NixOS/nixpkgs) or are outdated there:
 
-- [proton-ge-custom](./packages/proton-ge-custom/) ([Source](https://github.com/GloriousEggroll/proton-ge-custom))
 
 ### systems
 
