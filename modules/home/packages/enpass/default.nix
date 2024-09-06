@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (pkgs) enpass;
@@ -14,10 +19,5 @@ in
 
   config = mkIf cfg.enable {
     home.packages = [ enpass ];
-
-    home.file.enpassAutostart = {
-      target = ".config/autostart/" + enpass.pname + ".desktop";
-      source = (enpass + "/share/applications/" + enpass.pname + ".desktop");
-    };
   };
 }
