@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (config.trzpiot.packages.steam) enable;
+  inherit (config.trzpiot.packages.huenicorn) enable;
   inherit (lib) mkEnableOption mkIf;
   inherit (pkgs.trzpiot) huenicorn;
 in
