@@ -62,7 +62,7 @@ in
       libreoffice.enable = true;
       neovim.enable = true;
       nil.enable = true;
-      nixpkgs-fmt.enable = true;
+      nixfmt.enable = true;
       obsidian.enable = true;
       ollama.enable = true;
       signal-desktop.enable = true;

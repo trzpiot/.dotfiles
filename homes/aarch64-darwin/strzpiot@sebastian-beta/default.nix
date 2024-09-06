@@ -45,7 +45,7 @@ in
     lazygit.enable = true;
     neovim.enable = true;
     nil.enable = true;
-    nixpkgs-fmt.enable = true;
+    nixfmt.enable = true;
     obsidian.enable = true;
     ollama.enable = true;
     podman.enable = true;
