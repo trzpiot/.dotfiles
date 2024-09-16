@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (pkgs) vimPlugins;
@@ -17,16 +22,7 @@ let
     };
   };
 
-  extraLuaConfig = ''
-
-
-    require('lualine').setup {
-        options = {
-            icons_enabled = true,
-            theme = 'dracula',
-        }
-    }
-  '';
+  extraLuaConfig = builtins.readFile ./config.lua;
 in
 {
   options.trzpiot.packages.neovim = {
@@ -47,11 +43,14 @@ in
       plugins = attrValues {
         inherit (vimPlugins)
           lualine-nvim
-          neorg;
+          neorg
+          ;
         inherit (vimPlugins.nvim-treesitter)
-          withAllGrammars;
+          withAllGrammars
+          ;
         inherit (pluginsWithConfiguration)
-          dracula-nvim;
+          dracula-nvim
+          ;
       };
     };
   };
