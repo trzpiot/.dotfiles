@@ -7,24 +7,11 @@
 
 let
   inherit (pkgs) vscode-extensions;
-  inherit (pkgs.vscode-utils) extensionFromVscodeMarketplace;
   inherit (lib) importJSON mkEnableOption mkIf;
 
   cfg = config.trzpiot.packages.vscode;
 
   settingsJson = importJSON ./settings.json;
-
-  # TODO: Write script for updating custom extensions
-  customExtensions = {
-    volar = {
-      vue = extensionFromVscodeMarketplace {
-        name = "volar";
-        publisher = "Vue";
-        version = "2.0.26";
-        sha256 = "sha256-EeJT4lG361TwpsvTVO0oFosHBtWnyiSRyCVcCsjpSBI=";
-      };
-    };
-  };
 in
 {
   options.trzpiot.packages.vscode = {
@@ -77,8 +64,8 @@ in
         inherit (vscode-extensions.sumneko)
           lua
           ;
-        inherit (customExtensions.volar)
-          vue
+        inherit (vscode-extensions.vue)
+          volar
           ;
       };
     };
