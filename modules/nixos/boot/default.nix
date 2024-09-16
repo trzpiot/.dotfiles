@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (config.trzpiot.boot) enable kernel kernelModules;
@@ -9,7 +14,10 @@ in
 {
   options.trzpiot.boot = {
     enable = mkEnableOption "Booting";
-    kernel = mkEnumOption [ "latest" "zen" ] "zen" "The Linux kernel to use.";
+    kernel = mkEnumOption [
+      "latest"
+      "zen"
+    ] "zen" "The Linux kernel to use.";
 
     kernelModules = mkOption {
       type = listOf str;

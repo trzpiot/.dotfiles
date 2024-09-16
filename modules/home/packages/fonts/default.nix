@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (lib) mkEnableOption optionals;
@@ -37,7 +42,8 @@ in
   };
 
   config = {
-    home.packages = [ ]
+    home.packages =
+      [ ]
       ++ optionals cfg.atkinsonHyperlegible.enable [ pkgs.atkinson-hyperlegible ]
       ++ optionals cfg.blexMonoNerdFont.enable [ customPkgs.blexMonoNerdFont ]
       ++ optionals cfg.hackNerdFont.enable [ customPkgs.hackNerdFont ]

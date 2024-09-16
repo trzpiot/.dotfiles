@@ -3,31 +3,42 @@
 let
   inherit (lib) mkOption;
   inherit (lib.lists) findFirst;
-  inherit (lib.types) enum int nullOr package str;
+  inherit (lib.types)
+    enum
+    int
+    nullOr
+    package
+    str
+    ;
 in
 {
-  findOrNull = parameter: search: list:
+  findOrNull =
+    parameter: search: list:
     findFirst (x: x.${parameter} == search) null list;
 
-  mkEnumOption = values: default: description:
+  mkEnumOption =
+    values: default: description:
     mkOption {
       inherit default description;
       type = (nullOr (enum values));
     };
 
-  mkStrOption = default: description:
+  mkStrOption =
+    default: description:
     mkOption {
       inherit default description;
       type = (nullOr str);
     };
 
-  mkIntOption = default: description:
+  mkIntOption =
+    default: description:
     mkOption {
       inherit default description;
       type = (nullOr int);
     };
 
-  mkPackageOption = default: description:
+  mkPackageOption =
+    default: description:
     mkOption {
       inherit default description;
       type = package;

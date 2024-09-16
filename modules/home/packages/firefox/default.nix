@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (builtins) attrValues;
@@ -46,7 +51,6 @@ in
 
   config = mkIf enable {
 
-
     programs.firefox = {
       inherit enable;
 
@@ -55,15 +59,16 @@ in
           "browser.translations.enable" = false;
         };
 
-        extensions = attrValues
-          {
+        extensions =
+          attrValues {
             inherit (firefox-addons)
               ublacklist
-              ublock-origin;
+              ublock-origin
+              ;
           }
-        ++ optionals abovevtt.enable [ customAddons.abovevtt ]
-        ++ optionals enpass.enable [ customAddons.enpass ]
-        ++ optionals todoist.enable [ customAddons.todoist ];
+          ++ optionals abovevtt.enable [ customAddons.abovevtt ]
+          ++ optionals enpass.enable [ customAddons.enpass ]
+          ++ optionals todoist.enable [ customAddons.todoist ];
       };
     };
   };

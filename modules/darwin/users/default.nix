@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (builtins) any listToAttrs;
@@ -14,7 +19,10 @@ let
       name = mkStrOption null "The full name of the user.";
       email = mkStrOption null "The e-mail address of the user.";
       uid = mkIntOption null "The UID of the user.";
-      shell = mkEnumOption [ "zsh" "fish" ] "zsh" "The shell for the user.";
+      shell = mkEnumOption [
+        "zsh"
+        "fish"
+      ] "zsh" "The shell for the user.";
     };
   };
 in
@@ -31,19 +39,16 @@ in
   config = mkIf cfg.enable {
     programs.fish.enable = mkIf (any (user: user.shell == "fish") cfg.users) true;
 
-    users.users = listToAttrs (map
-      (user:
-        {
-          name = user.username;
-          value = {
-            uid = user.uid;
-            description = user.name;
-            shell = pkgs.${user.shell};
-            home = "/Users/${user.username}";
-          };
-        }
-      )
-      cfg.users
+    users.users = listToAttrs (
+      map (user: {
+        name = user.username;
+        value = {
+          uid = user.uid;
+          description = user.name;
+          shell = pkgs.${user.shell};
+          home = "/Users/${user.username}";
+        };
+      }) cfg.users
     );
   };
 }
