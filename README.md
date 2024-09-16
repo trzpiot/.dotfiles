@@ -14,9 +14,7 @@ These are my personal dotfiles. 🔧 Managed with Nix. ❄️
 
 ## Intro
 
-After several years of distro hopping, endless re-installations and re-configurations, I finally decided to stop the distro hopping (to have more time to learn programming languages).
-The most obvious solution was a tool that would allow me to configure all my systems & applications universally.
-And this tool exists: Nix (and NixOS building on that)
+After several years of distro hopping, endless re-installations and re-configurations, I finally decided to stop the distro hopping (to have more time to do other stuff) and configure all my systems & applications universally with the help of Nix.
 
 If you haven't heard of [Nix & NixOS](https://nixos.org) yet, but you're interested, I recommend you to browse through [nix.dev](https://nix.dev).
 
