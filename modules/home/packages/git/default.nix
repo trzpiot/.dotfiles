@@ -1,9 +1,10 @@
 { config, lib, ... }:
 
 let
-  inherit (config.trzpiot.packages.git) enable userName userEmail;
   inherit (lib) mkEnableOption mkIf;
   inherit (lib.trzpiot) mkStrOption;
+
+  cfg = config.trzpiot.packages.git;
 in
 {
   options.trzpiot.packages.git = {
@@ -12,9 +13,9 @@ in
     userEmail = mkStrOption null "The e-mail address of the user.";
   };
 
-  config = mkIf enable {
+  config = mkIf cfg.enable {
     programs.git = {
-      inherit enable userName userEmail;
+      inherit (cfg) enable userName userEmail;
 
       extraConfig = {
         core.whitespace = "trailing-space,space-before-tab";
