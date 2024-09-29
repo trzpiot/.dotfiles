@@ -67,6 +67,9 @@ in
         inherit (vscode-extensions.vue)
           volar
           ;
+        inherit (vscode-extensions.svelte)
+          svelte-vscode
+          ;
       };
     };
   };

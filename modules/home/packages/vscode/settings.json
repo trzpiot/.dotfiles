@@ -22,6 +22,7 @@
     },
     "redhat.telemetry.enabled": false,
     "rust-analyzer.check.command": "clippy",
+    "svelte.enable-ts-plugin": true,
     "telemetry.telemetryLevel": "off",
     "todo-tree.general.tags": [
         "BUG",
