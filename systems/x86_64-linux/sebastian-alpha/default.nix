@@ -21,6 +21,7 @@
     network.enable = true;
     nix.enable = true;
     security.enable = true;
+    ssh.enable = true;
 
     users = {
       enable = true;
