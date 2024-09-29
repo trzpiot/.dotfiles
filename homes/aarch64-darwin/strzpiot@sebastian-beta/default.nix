@@ -11,7 +11,6 @@ in
     delta.enable = true;
     dircolors.enable = true;
     direnv.enable = true;
-    devenv.enable = true;
     discord.enable = true;
     eza.enable = true;
     fastfetch.enable = true;
@@ -40,8 +39,13 @@ in
       email = user.email;
     };
 
-    idea-community.enable = true;
     inkscape.enable = true;
+
+    jetbrains = {
+      idea-ultimate.enable = true;
+      rust-rover.enable = true;
+    };
+
     jq.enable = true;
     lazygit.enable = true;
     neovim.enable = true;
@@ -52,6 +56,7 @@ in
     podman.enable = true;
     ssh.enable = true;
     starship.enable = true;
+    vfkit.enable = true;
     vscode.enable = true;
     zoxide.enable = true;
   };

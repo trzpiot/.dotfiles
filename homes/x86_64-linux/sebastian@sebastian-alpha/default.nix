@@ -56,8 +56,13 @@ in
       };
 
       huenicorn.enable = true;
-      idea-community.enable = true;
       inkscape.enable = true;
+
+      jetbrains = {
+        idea-ultimate.enable = true;
+        rust-rover.enable = true;
+      };
+
       jq.enable = true;
       lazygit.enable = true;
       libreoffice.enable = true;
