@@ -69,6 +69,7 @@ in
       r2modman.enable = true;
       signal-desktop.enable = true;
       spotify.enable = true;
+      ssh.enable = true;
       starship.enable = true;
       teamspeak.enable = true;
       texlive.enable = true;
