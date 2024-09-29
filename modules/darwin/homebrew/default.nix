@@ -19,10 +19,6 @@ in
     homebrew = {
       enable = true;
 
-      global = {
-        autoUpdate = false;
-      };
-
       onActivation = {
         autoUpdate = true;
         cleanup = "zap";
