@@ -26,8 +26,6 @@ in
       };
 
       casks = [
-        "google-chrome"
-
         # TODO: Broken in Nixpkgs for aarch64-darwin
         "prusaslicer"
 
