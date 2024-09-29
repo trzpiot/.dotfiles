@@ -17,16 +17,18 @@ in
   };
 
   config = mkIf cfg.enable {
-    packages = [
+    environment.systemPackages = [
       mono
       steam-run
     ];
 
-    programs.gamemode.enable = true;
+    programs = {
+      gamemode.enable = true;
 
-    programs.steam = {
-      enable = true;
-      extraCompatPackages = [ proton-ge-bin ];
+      steam = {
+        enable = true;
+        extraCompatPackages = [ proton-ge-bin ];
+      };
     };
 
     # Required for some games, e.g. DayZ
