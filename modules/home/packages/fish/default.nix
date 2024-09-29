@@ -42,6 +42,7 @@ in
       shellAliases =
         {
           cat = "bat";
+          devenv = "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/trzpiot/dev-env-template/main/dev-env-template.sh)\"";
           find = "fd";
           lg = "lazygit";
         }
