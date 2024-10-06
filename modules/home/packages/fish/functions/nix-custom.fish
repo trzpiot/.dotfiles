@@ -25,7 +25,7 @@ end
 function switchDependingOnSystem
     functions -e switchDependingOnSystem
 
-    if [ @isDarwin@ -eq 1 ]
+    if [ -n "@isDarwin@" ]
         darwin-rebuild switch --flake .
     else
         sudo nixos-rebuild --flake .# switch
@@ -37,7 +37,7 @@ switch $argv[1]
     case 'check'
         nix flake check
     case 'clean'
-        if [ @isDarwin@ -eq 1 ]
+        if [ -n "@isDarwin@" ]
             nix-collect-garbage --delete-older-than 7d
         end
         sudo nix-collect-garbage --delete-older-than 7d

@@ -41,6 +41,9 @@ let
     };
   };
 
+  enpassCfg = config.trzpiot.packages.enpass;
+  todoistCfg = config.trzpiot.packages.todoist;
+
   cfg = config.trzpiot.packages.firefox;
 in
 {
@@ -61,8 +64,8 @@ in
         extensions =
           attrValues { inherit (firefox-addons) ublacklist ublock-origin; }
           ++ optionals cfg.abovevtt.enable [ customAddons.abovevtt ]
-          ++ optionals cfg.enpass.enable [ customAddons.enpass ]
-          ++ optionals cfg.todoist.enable [ customAddons.todoist ];
+          ++ optionals enpassCfg.enable [ customAddons.enpass ]
+          ++ optionals todoistCfg.enable [ customAddons.todoist ];
       };
     };
   };

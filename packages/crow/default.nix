@@ -28,8 +28,8 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "A Fast and Easy to use microframework for the web";
     homepage = "https://crowcpp.org";
-    license = builtins.attrValues { inherit (lib.licenses) bsd3; };
-    platforms = builtins.attrValues { inherit (lib.platforms) linux; };
+    license = lib.flatten (builtins.attrValues { inherit (lib.licenses) bsd3; });
+    platforms = lib.flatten (builtins.attrValues { inherit (lib.platforms) linux; });
     maintainers = [ ];
   };
 })
