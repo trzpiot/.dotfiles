@@ -11,6 +11,7 @@ in
 {
   trzpiot.packages = {
     alacritty.enable = true;
+    any-nix-shell.enable = true;
     aseprite.enable = true;
     bat.enable = true;
     bruno.enable = true;
