@@ -13,6 +13,7 @@ in
     alacritty.enable = true;
     any-nix-shell.enable = true;
     aseprite.enable = true;
+    atuin.enable = true;
     bat.enable = true;
     bruno.enable = true;
     chromium.enable = true;
