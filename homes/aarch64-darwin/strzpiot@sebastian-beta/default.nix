@@ -56,6 +56,13 @@ in
     podman.enable = true;
     ssh.enable = true;
     starship.enable = true;
+
+    tmux = {
+      enable = true;
+      icon = user.username + "@" + host;
+      shell = user.shell;
+    };
+
     vfkit.enable = true;
     vscode.enable = true;
     zoxide.enable = true;
