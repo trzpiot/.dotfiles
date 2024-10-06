@@ -82,6 +82,10 @@ in
       todoist.enable = true;
       vscode.enable = true;
       zoxide.enable = true;
+    tmux = {
+      enable = true;
+      icon = user.username + "@" + host;
+      shell = user.shell;
     };
   };
 }
