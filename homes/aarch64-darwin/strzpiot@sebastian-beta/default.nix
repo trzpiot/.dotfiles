@@ -6,6 +6,7 @@ in
 {
   trzpiot.packages = {
     alacritty.enable = true;
+    any-nix-shell.enable = true;
     bat.enable = true;
     bruno.enable = true;
     delta.enable = true;
