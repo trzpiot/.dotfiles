@@ -6,9 +6,9 @@
 }:
 
 let
-  inherit (pkgs) vimPlugins;
-  inherit (lib) mkEnableOption mkIf;
   inherit (builtins) attrValues;
+  inherit (lib) mkEnableOption mkIf;
+  inherit (pkgs) vimPlugins;
 
   cfg = config.trzpiot.packages.neovim;
 
@@ -33,24 +33,17 @@ in
     home.sessionVariables.MANPAGER = "nvim +Man!";
 
     programs.neovim = {
+      inherit (cfg) enable;
       inherit extraLuaConfig;
 
-      enable = true;
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
 
       plugins = attrValues {
-        inherit (vimPlugins)
-          lualine-nvim
-          neorg
-          ;
-        inherit (vimPlugins.nvim-treesitter)
-          withAllGrammars
-          ;
-        inherit (pluginsWithConfiguration)
-          dracula-nvim
-          ;
+        inherit (vimPlugins) lualine-nvim neorg;
+        inherit (vimPlugins.nvim-treesitter) withAllGrammars;
+        inherit (pluginsWithConfiguration) dracula-nvim;
       };
     };
   };

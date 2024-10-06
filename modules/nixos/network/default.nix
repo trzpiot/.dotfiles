@@ -12,10 +12,13 @@ in
 
   config = mkIf cfg.enable {
     networking = {
-      dhcpcd.enable = false;
+      dhcpcd = {
+        inherit (cfg) enable;
+      };
 
       networkmanager = {
-        enable = true;
+        inherit (cfg) enable;
+
         wifi = {
           backend = "iwd";
           powersave = false;

@@ -12,7 +12,7 @@ in
 
   config = mkIf cfg.enable {
     programs.ssh = {
-      enable = true;
+      inherit (cfg) enable;
 
       matchBlocks = {
         "github.com" = {

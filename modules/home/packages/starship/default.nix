@@ -12,7 +12,8 @@ in
 
   config = mkIf cfg.enable {
     programs.starship = {
-      enable = true;
+      inherit (cfg) enable;
+
       enableTransience = true;
 
       settings = {
@@ -30,8 +31,8 @@ in
         };
 
         character = {
-          success_symbol = "[λ](bold #f8f8f2)";
-          error_symbol = "[λ](bold #ff5555)";
+          success_symbol = "[❯](bold #f8f8f2)";
+          error_symbol = "[❯](bold #ff5555)";
         };
       };
     };

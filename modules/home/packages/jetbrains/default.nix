@@ -7,7 +7,7 @@
 
 let
   inherit (lib) mkEnableOption optionals;
-  inherit (pkgs.jetbrains) idea-community idea-ultimate rust-rover;
+  inherit (pkgs) jetbrains;
 
   cfg = config.trzpiot.packages.jetbrains;
 in
@@ -21,8 +21,8 @@ in
   config = {
     home.packages =
       [ ]
-      ++ optionals cfg.idea-community.enable [ idea-community ]
-      ++ optionals cfg.idea-ultimate.enable [ idea-ultimate ]
-      ++ optionals cfg.rust-rover.enable [ rust-rover ];
+      ++ optionals cfg.idea-community.enable [ jetbrains.idea-community ]
+      ++ optionals cfg.idea-ultimate.enable [ jetbrains.idea-ultimate ]
+      ++ optionals cfg.rust-rover.enable [ jetbrains.rust-rover ];
   };
 }

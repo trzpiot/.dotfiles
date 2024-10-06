@@ -12,7 +12,8 @@ in
 
   config = mkIf cfg.enable {
     programs.eza = {
-      enable = true;
+      inherit (cfg) enable;
+
       git = true;
     };
   };

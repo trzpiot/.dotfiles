@@ -6,10 +6,11 @@
 }:
 
 let
-  inherit (config.trzpiot.boot) enable kernel kernelModules;
   inherit (lib) mkEnableOption mkIf mkOption;
   inherit (lib.trzpiot) mkEnumOption;
   inherit (lib.types) listOf str;
+
+  cfg = config.trzpiot.boot;
 in
 {
   options.trzpiot.boot = {
@@ -27,13 +28,14 @@ in
     };
   };
 
-  config = mkIf enable {
+  config = mkIf cfg.enable {
     boot = {
-      kernelPackages = pkgs."linuxPackages_${kernel}";
+      kernelPackages = pkgs."linuxPackages_${cfg.kernel}";
 
       loader = {
         systemd-boot = {
-          enable = true;
+          inherit (cfg) enable;
+
           editor = false;
         };
 
@@ -41,7 +43,7 @@ in
       };
 
       initrd = {
-        inherit kernelModules;
+        inherit (cfg) kernelModules;
       };
     };
   };

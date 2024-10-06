@@ -12,7 +12,8 @@ in
 
   config = mkIf cfg.enable {
     programs.bat = {
-      enable = true;
+      inherit (cfg) enable;
+
       config.theme = "Dracula";
     };
   };

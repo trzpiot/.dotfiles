@@ -1,4 +1,9 @@
-{ lib, osConfig, ... }:
+{
+  lib,
+  host,
+  osConfig,
+  ...
+}:
 
 let
   user = lib.trzpiot.findOrNull "username" "strzpiot" osConfig.trzpiot.users.users;

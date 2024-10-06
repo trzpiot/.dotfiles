@@ -6,12 +6,11 @@
 }:
 
 let
-  inherit (pkgs) vscode-extensions;
   inherit (lib) importJSON mkEnableOption mkIf;
 
-  cfg = config.trzpiot.packages.vscode;
-
   settingsJson = importJSON ./settings.json;
+
+  cfg = config.trzpiot.packages.vscode;
 in
 {
   options.trzpiot.packages.vscode = {
@@ -20,57 +19,30 @@ in
 
   config = mkIf cfg.enable {
     programs.vscode = {
-      enable = true;
+      inherit (cfg) enable;
+
       mutableExtensionsDir = false;
       userSettings = settingsJson;
 
-      extensions = builtins.attrValues {
-        inherit (vscode-extensions.jnoortheen)
-          nix-ide
-          ;
-        inherit (vscode-extensions.dracula-theme)
-          theme-dracula
-          ;
-        inherit (vscode-extensions.rust-lang)
-          rust-analyzer
-          ;
-        inherit (vscode-extensions.mkhl)
-          direnv
-          ;
-        inherit (vscode-extensions.tamasfe)
-          even-better-toml
-          ;
-        inherit (vscode-extensions.pkief)
-          material-icon-theme
-          ;
-        inherit (vscode-extensions.yzhang)
-          markdown-all-in-one
-          ;
-        inherit (vscode-extensions.foxundermoon)
-          shell-format
-          ;
-        inherit (vscode-extensions.redhat)
-          vscode-yaml
-          ;
-        inherit (vscode-extensions.ms-azuretools)
-          vscode-docker
-          ;
-        inherit (vscode-extensions.gruntfuggly)
-          todo-tree
-          ;
-        inherit (vscode-extensions.fill-labs)
-          dependi
-          ;
-        inherit (vscode-extensions.sumneko)
-          lua
-          ;
-        inherit (vscode-extensions.vue)
-          volar
-          ;
-        inherit (vscode-extensions.svelte)
-          svelte-vscode
-          ;
-      };
+      # Normally I would work with `builtins.attrValues` here.
+      # However, the *publisher.extension* structure makes it more bloated.
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        dracula-theme.theme-dracula
+        rust-lang.rust-analyzer
+        mkhl.direnv
+        tamasfe.even-better-toml
+        pkief.material-icon-theme
+        yzhang.markdown-all-in-one
+        foxundermoon.shell-format
+        redhat.vscode-yaml
+        ms-azuretools.vscode-docker
+        gruntfuggly.todo-tree
+        fill-labs.dependi
+        sumneko.lua
+        vue.volar
+        svelte.svelte-vscode
+      ];
     };
   };
 }

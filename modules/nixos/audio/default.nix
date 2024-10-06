@@ -12,11 +12,15 @@ in
 
   config = mkIf cfg.enable {
     services.pipewire = {
-      enable = true;
-      pulse.enable = true;
+      inherit (cfg) enable;
+
+      pulse = {
+        inherit (cfg) enable;
+      };
 
       alsa = {
-        enable = true;
+        inherit (cfg) enable;
+
         support32Bit = true;
       };
     };

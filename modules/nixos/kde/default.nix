@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -26,18 +25,22 @@ in
 
   config = mkIf cfg.enable {
     services = {
-      desktopManager.plasma6.enable = true;
+      desktopManager.plasma6 = {
+        inherit (cfg) enable;
+      };
 
       displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
+        inherit (cfg) enable;
+
+        wayland = {
+          inherit (cfg) enable;
+        };
       };
     };
 
     services.xserver = {
+      inherit (cfg) enable;
       inherit videoDrivers;
-
-      enable = true;
 
       xkb = {
         layout = "us";
@@ -50,13 +53,15 @@ in
       subpixel.rgba = "rgb";
 
       hinting = {
-        enable = true;
+        inherit (cfg) enable;
+
         style = "full";
       };
     };
 
     hardware.graphics = {
-      enable = true;
+      inherit (cfg) enable;
+
       enable32Bit = true;
     };
   };

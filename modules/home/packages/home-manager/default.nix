@@ -22,11 +22,14 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.home-manager.enable = true;
+    programs.home-manager = {
+      inherit (cfg) enable;
+    };
 
     home = {
+      inherit (cfg) username;
+
       stateVersion = "23.05";
-      username = cfg.username;
 
       homeDirectory =
         if cfg.homeDirectory != null then

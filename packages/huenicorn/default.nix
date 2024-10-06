@@ -86,20 +86,11 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
-  meta =
-    let
-      inherit (lib.platforms)
-        linux
-        ;
-      inherit (lib.licenses)
-        gpl3Only
-        ;
-    in
-    {
-      description = "Huenicorn is a free Philips Hue™ bias lighting driver for Gnu/Linux";
-      homepage = "https://huenicorn.org";
-      license = [ gpl3Only ];
-      platforms = linux;
-      maintainers = [ ];
-    };
+  meta = {
+    description = "Huenicorn is a free Philips Hue™ bias lighting driver for Gnu/Linux";
+    homepage = "https://huenicorn.org";
+    license = builtins.attrValues { inherit (lib.licenses) gpl3Only; };
+    platforms = builtins.attrValues { inherit (lib.platforms) linux; };
+    maintainers = [ ];
+  };
 })

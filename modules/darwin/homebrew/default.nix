@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -17,7 +16,7 @@ in
 
   config = mkIf cfg.enable {
     homebrew = {
-      enable = true;
+      inherit (cfg) enable;
 
       onActivation = {
         autoUpdate = true;

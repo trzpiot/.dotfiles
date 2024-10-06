@@ -12,7 +12,8 @@ in
 
   config = mkIf cfg.enable {
     programs.zoxide = {
-      enable = true;
+      inherit (cfg) enable;
+
       options = [
         "--cmd cd"
       ];

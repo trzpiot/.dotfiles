@@ -7,26 +7,28 @@
 
 let
   inherit (lib) mkEnableOption optionals;
-
-  cfg = config.trzpiot.packages.fonts;
+  inherit (pkgs) nerdfonts;
 
   customPkgs = {
-    blexMonoNerdFont = pkgs.nerdfonts.override {
+    blexMonoNerdFont = nerdfonts.override {
       fonts = [ "IBMPlexMono" ];
     };
 
-    hackNerdFont = pkgs.nerdfonts.override {
+    hackNerdFont = nerdfonts.override {
       fonts = [ "Hack" ];
     };
 
-    jetBrainsMonoNerdFont = pkgs.nerdfonts.override {
+    jetBrainsMonoNerdFont = nerdfonts.override {
       fonts = [ "JetBrainsMono" ];
     };
 
-    monaspiceNerdFont = pkgs.nerdfonts.override {
+    monaspiceNerdFont = nerdfonts.override {
       fonts = [ "Monaspace" ];
     };
+
   };
+
+  cfg = config.trzpiot.packages.fonts;
 in
 {
   options.trzpiot.packages.fonts = {

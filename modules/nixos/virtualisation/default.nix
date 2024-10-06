@@ -17,15 +17,20 @@ in
   config = {
     virtualisation = {
       docker.rootless = mkIf cfg.docker.enable {
-        enable = true;
+        inherit (cfg) enable;
+
         setSocketVariable = true;
       };
 
       podman = mkIf cfg.podman.enable {
-        enable = true;
+        inherit (cfg) enable;
+
         dockerCompat = cfg.podman.asDockerReplacement;
-        dockerSocket.enable = true;
         defaultNetwork.settings.dns_enabled = true;
+
+        dockerSocket = {
+          inherit (cfg) enable;
+        };
       };
     };
   };

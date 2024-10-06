@@ -1,13 +1,11 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
 let
   inherit (lib) mkEnableOption mkIf;
-  inherit (pkgs.stdenv) isDarwin;
 
   cfg = config.trzpiot.packages.alacritty;
 in
@@ -23,7 +21,8 @@ in
     };
 
     programs.alacritty = {
-      enable = true;
+      inherit (cfg) enable;
+
       settings = {
         import = [ "~/.config/alacritty/dracula.toml" ];
 

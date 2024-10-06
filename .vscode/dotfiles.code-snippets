@@ -1,6 +1,8 @@
 {
     "Module default.nix": {
-        "prefix": ["mod"],
+        "prefix": [
+            "mod"
+        ],
         "body": [
             "{ options, config, pkgs, lib, ... }:",
             "",
@@ -21,6 +23,5 @@
         ],
         "description": "Template for a default.nix in a module.",
         "isFileTemplate": true
-        
     }
 }

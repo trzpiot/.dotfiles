@@ -7,7 +7,6 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  inherit (pkgs) mono proton-ge-bin steam-run;
 
   cfg = config.trzpiot.gaming;
 in
@@ -17,17 +16,17 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [
-      mono
-      steam-run
-    ];
+    environment.systemPackages = builtins.attrValues { inherit (pkgs) mono steam-run; };
 
     programs = {
-      gamemode.enable = true;
+      gamemode = {
+        inherit (cfg) enable;
+      };
 
       steam = {
-        enable = true;
-        extraCompatPackages = [ proton-ge-bin ];
+        inherit (cfg) enable;
+
+        extraCompatPackages = [ pkgs.proton-ge-bin ];
       };
     };
 

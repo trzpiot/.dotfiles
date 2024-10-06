@@ -16,6 +16,8 @@ in
       target = ".dircolors";
     };
 
-    programs.dircolors.enable = true;
+    programs.dircolors = {
+      inherit (cfg) enable;
+    };
   };
 }

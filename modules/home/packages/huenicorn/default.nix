@@ -7,7 +7,6 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  inherit (pkgs.trzpiot) huenicorn;
 
   cfg = config.trzpiot.packages.huenicorn;
 in
@@ -17,8 +16,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    home = {
-      packages = [ huenicorn ];
-    };
+    home.packages = [ pkgs.trzpiot.huenicorn ];
   };
 }

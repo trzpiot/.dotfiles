@@ -12,7 +12,7 @@ in
 
   config = mkIf cfg.enable {
     programs.texlive = {
-      enable = true;
+      inherit (cfg) enable;
 
       extraPackages = tpkgs: {
         inherit (tpkgs) scheme-full;

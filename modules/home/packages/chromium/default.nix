@@ -11,6 +11,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.chromium.enable = true;
+    programs.chromium = {
+      inherit (cfg) enable;
+    };
   };
 }

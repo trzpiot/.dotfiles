@@ -25,16 +25,11 @@ stdenv.mkDerivation (finalAttrs: {
     asio
   ];
 
-  meta =
-    let
-      inherit (lib.platforms) linux;
-      inherit (lib.licenses) bsd3;
-    in
-    {
-      description = "A Fast and Easy to use microframework for the web";
-      homepage = "https://crowcpp.org";
-      license = [ bsd3 ];
-      platforms = linux;
-      maintainers = [ ];
-    };
+  meta = {
+    description = "A Fast and Easy to use microframework for the web";
+    homepage = "https://crowcpp.org";
+    license = builtins.attrValues { inherit (lib.licenses) bsd3; };
+    platforms = builtins.attrValues { inherit (lib.platforms) linux; };
+    maintainers = [ ];
+  };
 })

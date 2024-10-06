@@ -7,11 +7,9 @@
 
 let
   inherit (builtins) attrValues;
-  inherit (config.trzpiot.packages.firefox) enable abovevtt;
-  inherit (config.trzpiot.packages) enpass todoist;
   inherit (lib) mkEnableOption mkIf optionals;
   inherit (pkgs.nur.repos.rycee) firefox-addons;
-  inherit (pkgs.nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
+  inherit (firefox-addons) buildFirefoxXpiAddon;
 
   # TODO: Write script for updating custom addons
   customAddons = {
@@ -42,6 +40,8 @@ let
       meta = { };
     };
   };
+
+  cfg = config.trzpiot.packages.firefox;
 in
 {
   options.trzpiot.packages.firefox = {
@@ -49,10 +49,9 @@ in
     abovevtt.enable = mkEnableOption "AboveVTT";
   };
 
-  config = mkIf enable {
-
+  config = mkIf cfg.enable {
     programs.firefox = {
-      inherit enable;
+      inherit (cfg) enable;
 
       profiles.default = {
         settings = {
@@ -60,15 +59,10 @@ in
         };
 
         extensions =
-          attrValues {
-            inherit (firefox-addons)
-              ublacklist
-              ublock-origin
-              ;
-          }
-          ++ optionals abovevtt.enable [ customAddons.abovevtt ]
-          ++ optionals enpass.enable [ customAddons.enpass ]
-          ++ optionals todoist.enable [ customAddons.todoist ];
+          attrValues { inherit (firefox-addons) ublacklist ublock-origin; }
+          ++ optionals cfg.abovevtt.enable [ customAddons.abovevtt ]
+          ++ optionals cfg.enpass.enable [ customAddons.enpass ]
+          ++ optionals cfg.todoist.enable [ customAddons.todoist ];
       };
     };
   };

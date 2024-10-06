@@ -12,8 +12,11 @@ in
 
   config = mkIf cfg.enable {
     programs.direnv = {
-      enable = true;
-      nix-direnv.enable = true;
+      inherit (cfg) enable;
+
+      nix-direnv = {
+        inherit (cfg) enable;
+      };
     };
   };
 }

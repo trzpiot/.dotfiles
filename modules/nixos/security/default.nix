@@ -11,6 +11,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    security.rtkit.enable = true;
+    security.rtkit = {
+      inherit (cfg) enable;
+    };
   };
 }

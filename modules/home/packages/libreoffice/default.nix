@@ -7,15 +7,15 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  inherit (config.trzpiot.packages.firefox) enable;
-  inherit (pkgs) libreoffice-fresh;
+
+  cfg = config.trzpiot.packages.libreoffice;
 in
 {
   options.trzpiot.packages.libreoffice = {
     enable = mkEnableOption "LibreOffice";
   };
 
-  config = mkIf enable {
-    home.packages = [ libreoffice-fresh ];
+  config = mkIf cfg.enable {
+    home.packages = [ pkgs.libreoffice-fresh ];
   };
 }

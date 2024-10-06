@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -16,7 +15,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.nix-daemon.enable = true;
+    services.nix-daemon = {
+      inherit (cfg) enable;
+    };
+
     nix.settings.experimental-features = [
       "nix-command"
       "flakes"
