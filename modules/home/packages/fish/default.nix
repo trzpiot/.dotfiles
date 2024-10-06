@@ -7,13 +7,16 @@
 
 let
   inherit (lib) mkEnableOption mkIf optionalAttrs;
-  inherit (pkgs.stdenv) isDarwin isLinux;
   inherit (lib.snowfall.fs) get-file;
+  inherit (pkgs.stdenv) isDarwin;
 
-  cfg = config.trzpiot.packages.fish;
+  tmuxCfg = config.trzpiot.packages.tmux;
   fastfetchCfg = config.trzpiot.packages.fastfetch;
   fastfetchCfgFile = get-file "modules/home/packages/fastfetch/config.jsonc";
   neofetchCfg = config.trzpiot.packages.neofetch;
+  anyNixShellCfg = config.trzpiot.packages.any-nix-shell;
+
+  cfg = config.trzpiot.packages.fish;
 in
 {
   options.trzpiot.packages.fish = {
@@ -22,7 +25,8 @@ in
 
   config = mkIf cfg.enable {
     programs.fish = {
-      enable = true;
+      inherit (cfg) enable;
+
       shellInit = ''
         complete -f -c nix-custom -n '__fish_use_subcommand' -a 'check' -d 'Check configuration'
         complete -f -c nix-custom -n '__fish_use_subcommand' -a 'clean' -d 'Clean up'
@@ -32,12 +36,34 @@ in
         complete -f -c nix-custom -n '__fish_use_subcommand' -a 'update' -d 'Update and switch to a new configuration'
       '';
       interactiveShellInit =
-        if fastfetchCfg.enable then
-          "fastfetch -c ${fastfetchCfgFile}"
-        else if neofetchCfg.enable then
-          "neofetch"
-        else
-          null;
+        (
+          if fastfetchCfg.enable then
+            "fastfetch -c ${fastfetchCfgFile}"
+          else if neofetchCfg.enable then
+            "neofetch"
+          else
+            null
+        )
+        + (
+          if tmuxCfg.enable then
+            ''
+
+              if not set -q TMUX
+                tmux new-session -As session_name
+              end
+            ''
+          else
+            null
+        )
+        + (
+          if anyNixShellCfg.enable then
+            ''
+
+              any-nix-shell fish --info-right | source
+            ''
+          else
+            null
+        );
 
       shellAliases =
         {
@@ -47,20 +73,19 @@ in
           lg = "lazygit";
         }
         // optionalAttrs isDarwin {
+          docker = "podman";
           vi = "nvim";
           vim = "nvim";
         };
 
       functions = {
-        gitignore = "curl -sL https://www.gitignore.io/api/$argv";
         nix-custom = {
           body = builtins.readFile (
             pkgs.replaceVars ./functions/nix-custom.fish {
-              nixCommand =
-                if isLinux then "sudo nixos-rebuild --flake .# switch" else "darwin-rebuild switch --flake .";
+              inherit isDarwin;
             }
           );
-          description = if isLinux then "Custom commands for NixOS" else "Custom commands for nix-darwin";
+          description = if isDarwin then "Custom commands for nix-darwin" else "Custom commands for NixOS";
         };
       };
     };

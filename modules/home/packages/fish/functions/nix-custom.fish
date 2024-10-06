@@ -22,21 +22,34 @@ if set -q _flag_help
     return 0
 end
 
+function switchDependingOnSystem
+    functions -e switchDependingOnSystem
+
+    if [ @isDarwin@ -eq 1 ]
+        darwin-rebuild switch --flake .
+    else
+        sudo nixos-rebuild --flake .# switch
+    end
+end
+
 pushd ~/.dotfiles
 switch $argv[1]
     case 'check'
         nix flake check
     case 'clean'
+        if [ @isDarwin@ -eq 1 ]
+            nix-collect-garbage --delete-older-than 7d
+        end
         sudo nix-collect-garbage --delete-older-than 7d
     case 'config'
         code .
     case 'help'
         help
     case 'switch'
-        @nixCommand@
+        switchDependingOnSystem
     case 'update'
         nix flake update
-        @nixCommand@
+        switchDependingOnSystem
     case '*'
         set_color red
         echo "error: Invalid subcommand"
