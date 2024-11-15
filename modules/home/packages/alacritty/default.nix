@@ -1,11 +1,13 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
 let
   inherit (lib) mkEnableOption mkIf;
+  inherit (pkgs.stdenv) isDarwin;
 
   cfg = config.trzpiot.packages.alacritty;
 in
@@ -24,10 +26,10 @@ in
       inherit (cfg) enable;
 
       settings = {
-        import = [ "~/.config/alacritty/dracula.toml" ];
+        general.import = [ "~/.config/alacritty/dracula.toml" ];
 
         window = {
-          decorations = "buttonless";
+          decorations = if isDarwin then "buttonless" else "full";
 
           padding = {
             x = 8;
