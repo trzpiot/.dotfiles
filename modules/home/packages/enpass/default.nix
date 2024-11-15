@@ -7,6 +7,7 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
+  inherit (pkgs) enpass;
 
   cfg = config.trzpiot.packages.enpass;
 in
@@ -16,6 +17,11 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = [ pkgs.enpass ];
+    home.file.enpassAutostart = {
+      target = ".config/autostart/" + enpass.pname + ".desktop";
+      source = (enpass + "/share/applications/" + enpass.pname + ".desktop");
+    };
+
+    home.packages = [ enpass ];
   };
 }
