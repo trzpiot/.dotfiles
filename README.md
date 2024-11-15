@@ -62,8 +62,14 @@ The hosts are named after the [Greek alphabet](https://en.wikipedia.org/wiki/Gre
 - [x86_64-linux/sebastian-alpha](./systems/x86_64-linux/sebastian-alpha/): My main computer running NixOS
 - [aarch64-darwin/sebastian-beta](./systems/aarch64-darwin/sebastian-beta/): My MacBook Air M2
 
-## Logo
+## Sources
+
+### Logo
 
 License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 [OpenMoji - Snowflake](https://openmoji.org/library/emoji-2744/) (License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/))
+
+### Other
+
+- [gameboy-color-dracula.png](https://w.wallhaven.cc/full/kx/wallhaven-kx59ym.png) (Colors adapted from Dracula Theme)
