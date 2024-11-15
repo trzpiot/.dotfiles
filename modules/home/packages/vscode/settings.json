@@ -7,6 +7,8 @@
     "editor.fontSize": 14,
     "editor.formatOnSave": true,
     "editor.lineHeight": 1.4,
+    "extensions.autoCheckUpdates": false,
+    "extensions.autoUpdate": false,
     "files.autoSave": "onFocusChange",
     "git.enabled": false,
     "nix.enableLanguageServer": true,
@@ -52,6 +54,7 @@
             "opacity": 0
         }
     },
+    "update.mode": "none",
     "workbench.colorTheme": "Dracula",
     "workbench.editor.openPositioning": "first",
     "workbench.editor.showTabs": "single",
