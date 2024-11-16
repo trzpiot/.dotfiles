@@ -11,6 +11,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    home.sessionVariables.MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+
     programs.bat = {
       inherit (cfg) enable;
 
