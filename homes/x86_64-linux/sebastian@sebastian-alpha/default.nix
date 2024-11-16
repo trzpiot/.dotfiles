@@ -16,6 +16,7 @@ in
     atuin.enable = true;
     bat.enable = true;
     bruno.enable = true;
+    cartridges.enable = true;
     chromium.enable = true;
     delta.enable = true;
     dircolors.enable = true;
