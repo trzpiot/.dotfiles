@@ -18,6 +18,7 @@ in
     bruno.enable = true;
     cartridges.enable = true;
     chromium.enable = true;
+    dconf-editor.enable = true;
     delta.enable = true;
     dircolors.enable = true;
     direnv.enable = true;
