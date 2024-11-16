@@ -85,6 +85,7 @@ in
     spotify.enable = true;
     ssh.enable = true;
     starship.enable = true;
+    syncthing.enable = true;
     teamspeak.enable = true;
     texlive.enable = true;
     texstudio.enable = true;
