@@ -13,8 +13,8 @@ let
   cfg = config.trzpiot.packages.neovim;
 
   pluginsWithConfiguration = {
-    dracula-nvim = {
-      plugin = vimPlugins.dracula-nvim;
+    dracula-vim = {
+      plugin = vimPlugins.dracula-vim;
       config = ''
         colorscheme dracula
         set termguicolors
@@ -30,11 +30,13 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.sessionVariables.MANPAGER = "nvim +Man!";
-
     programs.neovim = {
       inherit (cfg) enable;
       inherit extraLuaConfig;
+
+      extraConfig = ''
+        set number
+      '';
 
       defaultEditor = true;
       viAlias = true;
@@ -43,7 +45,7 @@ in
       plugins = attrValues {
         inherit (vimPlugins) lualine-nvim neorg;
         inherit (vimPlugins.nvim-treesitter) withAllGrammars;
-        inherit (pluginsWithConfiguration) dracula-nvim;
+        inherit (pluginsWithConfiguration) dracula-vim;
       };
     };
   };
