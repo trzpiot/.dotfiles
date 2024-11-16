@@ -55,6 +55,7 @@ in
 
     gnome.enable = true;
     godot.enable = true;
+    heroic.enable = true;
 
     home-manager = {
       enable = true;
