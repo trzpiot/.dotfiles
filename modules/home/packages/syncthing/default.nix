@@ -20,7 +20,7 @@ in
     services.syncthing = {
       inherit (cfg) enable;
 
-      tray = isLinux;
+      tray.enable = isLinux;
     };
   };
 }
