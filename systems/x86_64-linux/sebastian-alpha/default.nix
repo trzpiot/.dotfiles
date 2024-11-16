@@ -9,12 +9,12 @@
       kernelModules = [ "amdgpu" ];
     };
 
-    gaming.enable = true;
-
-    kde = {
+    display = {
       enable = true;
       videoDrivers = [ "amdgpu" ];
     };
+
+    gaming.enable = true;
 
     home-manager.enable = true;
     locale.enable = true;
