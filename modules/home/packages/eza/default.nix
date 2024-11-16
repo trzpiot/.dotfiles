@@ -15,6 +15,7 @@ in
       inherit (cfg) enable;
 
       git = true;
+      icons = "auto";
     };
   };
 }
