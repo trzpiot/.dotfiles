@@ -63,6 +63,7 @@ in
     podman.enable = true;
     ssh.enable = true;
     starship.enable = true;
+    syncthing.enable = true;
 
     tmux = {
       enable = true;
