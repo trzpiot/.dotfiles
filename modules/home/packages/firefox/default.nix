@@ -54,7 +54,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.file."firefox-gnome-theme" = optionals gnomeCfg.enable {
+    home.file."firefox-gnome-theme" = mkIf gnomeCfg.enable {
       source = pkgs.trzpiot.firefox-gnome-theme;
       target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
     };
@@ -67,7 +67,7 @@ in
         name = "Default";
         isDefault = true;
 
-        userChrome = optionals gnomeCfg.enable ''
+        userChrome = mkIf gnomeCfg.enable ''
           @import "firefox-gnome-theme/userChrome.css";
           @import "firefox-gnome-theme/userContent.css"; 
         '';
@@ -78,7 +78,7 @@ in
             "extensions.pocket.enabled" = false;
             "signon.rememberSignons" = false;
           }
-          // optionals gnomeCfg.enable {
+          // mkIf gnomeCfg.enable {
             "layers.acceleration.force-enabled" = true;
             "mozilla.widget.use-argb-visuals" = true;
             "svg.context-properties.content.enabled" = true;

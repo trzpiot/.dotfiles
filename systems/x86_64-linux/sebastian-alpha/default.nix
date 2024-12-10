@@ -11,7 +11,7 @@
 
     display = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
+      desktopEnvironment = "kde";
     };
 
     gaming.enable = true;

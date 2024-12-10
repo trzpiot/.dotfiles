@@ -53,7 +53,6 @@ in
       userEmail = user.email;
     };
 
-    gnome.enable = true;
     godot.enable = true;
     heroic.enable = true;
 
