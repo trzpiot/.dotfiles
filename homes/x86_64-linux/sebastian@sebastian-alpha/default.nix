@@ -95,7 +95,6 @@ in
       shell = user.shell;
     };
 
-    todoist.enable = true;
     vscode.enable = true;
     zoxide.enable = true;
   };
