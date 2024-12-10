@@ -15,7 +15,7 @@ let
   customAddons = {
     abovevtt = buildFirefoxXpiAddon rec {
       pname = "abovevtt";
-      version = "1.25";
+      version = "1.28";
       addonId = "{52e126d4-d2d7-483a-a0a1-6e8aace23253}";
       url = "https://addons.mozilla.org/firefox/downloads/file/4268944/abovevtt-${version}.xpi";
       sha256 = "sha256-8qzAuCYXPjX7HUi5yOjfytoq5Sj3wSiCpMuvrIGcf80";
@@ -24,7 +24,7 @@ let
 
     enpass = buildFirefoxXpiAddon rec {
       pname = "enpass";
-      version = "6.11.0.3";
+      version = "6.11.1.1";
       addonId = "firefox-enpass@enpass.io";
       url = "https://addons.mozilla.org/firefox/downloads/file/4195847/enpass_password_manager-${version}.xpi";
       sha256 = "sha256-UwCM1/J75h6fiBhekMhl7YlsHIPLLMMUyZ2833PlRAU";
