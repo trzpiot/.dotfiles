@@ -44,7 +44,7 @@
       };
 
       overlays = [
-        inputs.nur.overlay
+        inputs.nur.overlays.default
       ];
 
       systems.modules.nixos = [
