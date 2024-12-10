@@ -7,26 +7,7 @@
 
 let
   inherit (lib) mkEnableOption optionals;
-  inherit (pkgs) nerdfonts;
-
-  customPkgs = {
-    blexMonoNerdFont = nerdfonts.override {
-      fonts = [ "IBMPlexMono" ];
-    };
-
-    hackNerdFont = nerdfonts.override {
-      fonts = [ "Hack" ];
-    };
-
-    jetBrainsMonoNerdFont = nerdfonts.override {
-      fonts = [ "JetBrainsMono" ];
-    };
-
-    monaspiceNerdFont = nerdfonts.override {
-      fonts = [ "Monaspace" ];
-    };
-
-  };
+  inherit (pkgs) nerd-fonts;
 
   cfg = config.trzpiot.packages.fonts;
 in
@@ -47,13 +28,13 @@ in
     home.packages =
       [ ]
       ++ optionals cfg.atkinsonHyperlegible.enable [ pkgs.atkinson-hyperlegible ]
-      ++ optionals cfg.blexMonoNerdFont.enable [ customPkgs.blexMonoNerdFont ]
-      ++ optionals cfg.hackNerdFont.enable [ customPkgs.hackNerdFont ]
+      ++ optionals cfg.blexMonoNerdFont.enable [ nerd-fonts.blex-mono ]
+      ++ optionals cfg.hackNerdFont.enable [ nerd-fonts.hack ]
       ++ optionals cfg.hubotSans.enable [ pkgs.hubot-sans ]
       ++ optionals cfg.inter.enable [ pkgs.inter ]
-      ++ optionals cfg.jetBrainsMonoNerdFont.enable [ customPkgs.jetBrainsMonoNerdFont ]
+      ++ optionals cfg.jetBrainsMonoNerdFont.enable [ nerd-fonts.jetbrains-mono ]
       ++ optionals cfg.monaSans.enable [ pkgs.mona-sans ]
       ++ optionals cfg.monaspace.enable [ pkgs.monaspace ]
-      ++ optionals cfg.monaspiceNerdFont.enable [ customPkgs.monaspiceNerdFont ];
+      ++ optionals cfg.monaspiceNerdFont.enable [ nerd-fonts.monaspace ];
   };
 }
