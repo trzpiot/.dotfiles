@@ -16,7 +16,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = builtins.attrValues { inherit (pkgs) mono steam-run; };
+    environment.systemPackages = builtins.attrValues { inherit (pkgs) mono; };
 
     programs = {
       gamemode = {
