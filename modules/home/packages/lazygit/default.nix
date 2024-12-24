@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) importJSON mkEnableOption mkIf;
 
   cfg = config.trzpiot.packages.lazygit;
 in
@@ -14,7 +14,10 @@ in
     programs.lazygit = {
       inherit (cfg) enable;
 
-      settings.git.paging.pager = "delta --dark --syntax-theme 'Dracula' --paging=never";
+      settings = {
+        gui = importJSON ./dracula.json;
+        git.paging.pager = "delta --dark --syntax-theme 'Dracula' --paging=never";
+      };
     };
   };
 }
