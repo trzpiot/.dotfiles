@@ -42,7 +42,7 @@ in
           else if neofetchCfg.enable then
             "neofetch"
           else
-            null
+            ""
         )
         + (
           if tmuxCfg.enable then
@@ -53,7 +53,7 @@ in
               end
             ''
           else
-            null
+            ""
         )
         + (
           if anyNixShellCfg.enable then
@@ -62,7 +62,7 @@ in
               any-nix-shell fish --info-right | source
             ''
           else
-            null
+            ""
         );
 
       shellAliases =
