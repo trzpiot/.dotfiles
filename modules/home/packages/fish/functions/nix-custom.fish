@@ -14,7 +14,7 @@ function help
     echo "   config   Edit configuration"
     echo "   help     Shows information about nix-custom"
     echo "   switch   Switch to a new configuration"
-    echo "   update   Updaste and switch to a new configuration"
+    echo "   update   Update and switch to a new configuration"
 end
 
 if set -q _flag_help
