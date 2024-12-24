@@ -52,6 +52,7 @@ This directory contains the configurations for [NixOS](./modules/nixos/), [Home 
 This directory contains packages that I need but are not in [Nixpkgs](https://github.com/NixOS/nixpkgs) or are outdated there:
 
 - [crow](./packages/crow/) ([Source](https://github.com/CrowCpp/Crow))
+- [firefox-gnome-theme](./packages/firefox-gnome-theme/) ([Source](https://github.com/rafaelmardojai/firefox-gnome-theme))
 - [huenicorn](./packages/huenicorn/) ([Source](https://gitlab.com/openjowelsofts/huenicorn))
 
 ### systems
