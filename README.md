@@ -5,7 +5,7 @@
 
 # .dotfiles
 
-[![Maintenance](https://img.shields.io/maintenance/active/2024?style=for-the-badge)](https://github.com/trzpiot/dotfiles/commits/main)
+[![Maintenance](https://img.shields.io/maintenance/active/2025?style=for-the-badge)](https://github.com/trzpiot/dotfiles/commits/main)
 [![Nix Flake](https://img.shields.io/badge/Nix%20Flake-%235277C3?logo=snowflake&style=for-the-badge)](https://nix.dev/concepts/flakes.html)
 
 These are my personal dotfiles. 🔧 Managed with Nix. ❄️
